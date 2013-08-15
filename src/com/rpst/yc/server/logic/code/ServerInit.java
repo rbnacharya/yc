@@ -1,7 +1,5 @@
 package com.rpst.yc.server.logic.code;
 
-import java.rmi.Naming;
-import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -32,7 +30,7 @@ public class ServerInit {
 		}
 
 	}
-	public void CreateOrSave(){
+	public void createOrSave(){
 		
 	}
 	public static void main(String[] args) {

@@ -7,6 +7,7 @@ import java.util.Hashtable;
 import java.util.UUID;
 
 import com.rpst.yc.client.logic.code.Client;
+import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.code.User;
 
 public class SessionColl {
@@ -41,7 +42,7 @@ public class SessionColl {
 		}
 		return false;
 	}
-	public Client getClientFUser(User ur){
+	public RClient getClientFUser(User ur){
 		Enumeration<Integer> enumKey = session.keys();
 		while(enumKey.hasMoreElements()) {
 		    Integer key = enumKey.nextElement();
@@ -64,7 +65,7 @@ public class SessionColl {
 		}
 		return false;
 	}
-	public Client getClientFromUUID(UUID sid){
+	public RClient getClientFromUUID(UUID sid){
 		Enumeration<Integer> enumKey = session.keys();
 		while(enumKey.hasMoreElements()) {
 		    Integer key = enumKey.nextElement();
