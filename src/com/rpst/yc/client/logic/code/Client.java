@@ -6,23 +6,16 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.UUID;
 
 import com.rpst.yc.commons.def.RClient;
+import java.io.Serializable;
 
-public class Client implements RClient,Serializable{
+public class Client implements RClient, Serializable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1846351611822451760L;
+	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
-	
 	@Override
 	public void new_session(UUID id) throws RemoteException {
 		// TODO Auto-generated method stub

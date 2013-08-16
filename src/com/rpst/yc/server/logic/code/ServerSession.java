@@ -29,7 +29,7 @@ public class ServerSession{
 		this.session_id = session_id;
 	}
 	public boolean terminate;
-	public ServerSession(Client cli,User ur) {
+	public ServerSession(RClient cli,User ur) {
 		this.clientt=cli;
 		this.userr=ur;
 		this.terminate=false;
