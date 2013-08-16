@@ -43,7 +43,7 @@ public class ClientColl {
 		totalConnected++;
 		return true;
 	}
-	public boolean removeClient(Client cl){
+	public boolean removeClient(RClient cl){
 		return this.remClient(this.getKeyFromClient(cl));
 	}
 	public boolean remClient(int id){
@@ -79,7 +79,7 @@ public class ClientColl {
 		IClientColl val=clients.get(new Integer(key));
 		return val.getClient();
 	}
-	public int getKeyFromClient(Client cl){
+	public int getKeyFromClient(RClient cl){
 		Enumeration<Integer> enumKey = clients.keys();
 		while(enumKey.hasMoreElements()) {
 		    Integer key = enumKey.nextElement();
@@ -90,7 +90,7 @@ public class ClientColl {
 		}
 		return -1;
 	}
-	public boolean consumereleaseClient(Client cl,boolean release){
+	public boolean consumereleaseClient(RClient cl,boolean release){
 		Integer key=this.getKeyFromClient(cl);
 		if(key!=-1){
 			IClientColl val=clients.get(key);

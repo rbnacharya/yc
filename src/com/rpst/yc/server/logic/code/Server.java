@@ -27,7 +27,7 @@ public class Server extends Computer implements RServer {
 		
 	}
 	@Override
-	public boolean removeClient(Client cl) throws RemoteException{
+	public boolean removeClient(RClient cl) throws RemoteException{
 		return Clients.removeClient(cl);
 	}
 	public boolean isClientFree(){

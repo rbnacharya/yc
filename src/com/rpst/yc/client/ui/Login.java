@@ -182,7 +182,7 @@ public static int start = 0;
              java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                
-                    final ClientUIMain c = new ClientUIMain();
+                    final Main c = new Main();
                     c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                     c.setLocation(500, 150);
                     c.lbl_prepaid_amt.setText("00.00");
@@ -235,7 +235,7 @@ public static int start = 0;
         });
             this.dispose();
             //this.setVisible(false);
-            fullpage f1 = ClientUIMain.f;
+            fullpage f1 = Main.f;
            f1.setVisible(false);
              
         }
