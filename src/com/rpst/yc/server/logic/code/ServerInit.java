@@ -1,7 +1,5 @@
 package com.rpst.yc.server.logic.code;
 
-import java.rmi.Naming;
-import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -18,12 +16,12 @@ public class ServerInit {
 	public void play(){
 		 // Assign a security manager, in the event that dynamic
 	       // classes are loaded
-			
+               String rmiserver="rmi://192.168.1.5/";
 	       RServer server=new Server();
 	       try {
-			RServer stub=(RServer)UnicastRemoteObject.exportObject(server,0);
+                    RServer stub=(RServer)UnicastRemoteObject.exportObject(server,0);
 		    Registry reg=LocateRegistry.createRegistry(YCValues.RMI_PORT);
-		    reg.rebind(YCValues.Server_Class, stub);
+		    reg.rebind(rmiserver+YCValues.Server_Class, stub);
 		    System.out.println("Server Started at Port"+YCValues.RMI_PORT);
  
 		} catch (RemoteException e) {
@@ -32,7 +30,7 @@ public class ServerInit {
 		}
 
 	}
-	public void CreateOrSave(){
+	public void createOrSave(){
 		
 	}
 	public static void main(String[] args) {

@@ -20,12 +20,13 @@ public class Server extends Computer implements RServer {
 	
 	//Client Management
 	@Override
-	public boolean AddClient(RClient cl){
+	public boolean addClient(RClient cl){
 		System.out.println("NEw Client Loaded");
 		return Clients.addClient(cl);
 		
 	}
-	public boolean RemoveClient(Client cl){
+	@Override
+	public boolean removeClient(Client cl){
 		return Clients.removeClient(cl);
 	}
 	public boolean isClientFree(){
@@ -59,7 +60,7 @@ public class Server extends Computer implements RServer {
 	public boolean destroySession(UUID sid){
 		return sessions.destroySession(sid);
 	}
-	public Client getClientFromSID(UUID sid){
+	public RClient getClientFromSID(UUID sid){
 		return sessions.getClientFromUUID(sid);
 	}
 	public SessionColl getSessionCollection(){

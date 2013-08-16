@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 import com.rpst.yc.client.logic.code.Client;
 
 public interface RServer extends Remote{
-	public boolean AddClient(RClient cl) throws RemoteException;
-	public boolean RemoveClient(Client cl) throws RemoteException;
+	public boolean addClient(RClient cl) throws RemoteException;
+	public boolean removeClient(Client cl) throws RemoteException;
 
 }

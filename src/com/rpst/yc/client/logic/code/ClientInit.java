@@ -10,12 +10,12 @@ import com.rpst.yc.commons.def.RServer;
 public class ClientInit {
 	public ClientInit() {
 		 
-		  
+		  String serverIP="#";
 		  try {
 			  Registry reg=LocateRegistry.getRegistry(YCValues.RMI_PORT);
 			  RServer rser=(RServer) reg.lookup(YCValues.Server_Class);
 			  RClient cl=new Client();
-			  rser.AddClient(cl);
+			  rser.addClient(cl);
 			  System.out.println("Client Added");
 			
 		} catch (Exception e) {

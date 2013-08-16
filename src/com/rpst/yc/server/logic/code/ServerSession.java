@@ -5,21 +5,21 @@ import java.util.Date;
 import java.util.UUID;
 
 import com.rpst.yc.client.logic.code.Client;
+import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.code.User;
-import com.rpst.yc.server.logic.def.IServerSession;
 
-public class ServerSession extends IServerSession{
-	Client clientt;
+public class ServerSession{
+	RClient clientt;
 	User userr;
-	Date StartDate;
-	Date EndDate;
-	int CostParam;
+	Date startDate;
+	Date endDate;
+	int costParam;
 	UUID session_id;
-	int UPC;
+	int uPC;
 	public User getUser() {
 		return userr;
 	}
-	public Client getClientt() {
+	public RClient getClientt() {
 		return clientt;
 	}
 	public UUID getSession_id() {
@@ -35,24 +35,24 @@ public class ServerSession extends IServerSession{
 		this.terminate=false;
 	}
 	public void start(){
-		StartDate=new Date();
+		startDate=new Date();
 	}
 	public void stop(){
-		EndDate=new Date();
+		endDate=new Date();
 		this.calculate();
 	}
 	private void calculate(){
 		Calendar c=Calendar.getInstance();
-		c.setTime(new Date(StartDate.getTime()-EndDate.getTime()));
-		this.UPC=c.get(Calendar.MINUTE);
+		c.setTime(new Date(startDate.getTime()-endDate.getTime()));
+		this.uPC=c.get(Calendar.MINUTE);
 	}
 	public int getUPC() {
-		return UPC;
+		return uPC;
 	}
 	public void setUPC(int uPC) {
-		UPC = uPC;
+		this.uPC = uPC;
 	}
 	public void setCostParam(int costParam) {
-		CostParam = costParam;
+		this.costParam = costParam;
 	}
 }

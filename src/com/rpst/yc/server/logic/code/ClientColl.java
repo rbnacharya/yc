@@ -26,7 +26,6 @@ public class ClientColl {
 			cc=new ClientColl();
 		}
 		return cc;
-		
 	}
 	public static int getTotalClient() {
 		return totalConnected;

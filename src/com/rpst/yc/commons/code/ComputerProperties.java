@@ -1,16 +1,14 @@
-package com.rpst.yc.server.logic.code;
+package com.rpst.yc.commons.code;
 
 import java.io.FileOutputStream;
 import java.util.Properties;
-
-import com.rpst.yc.commons.code.YCValues;
 
 public class ComputerProperties {
 	Properties prop;
 	public ComputerProperties() {
 		prop=new Properties();
 	}
-	public boolean Save(){
+	public boolean save(){
 		try {
 			prop.store(new FileOutputStream(YCValues.C_Property_File), null);
 			return true;
