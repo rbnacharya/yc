@@ -22,7 +22,7 @@ public class SessionColl {
 		}
 		return inssess;
 	}
-	public UUID createSession(Client cl,User us){
+	public UUID createSession(RClient cl,User us){
 		this.destroyLastSessionOfClient(cl);
 		UUID sid=this.createUUID();
 		ServerSession sess=new ServerSession(cl, us);
@@ -100,14 +100,14 @@ public class SessionColl {
 		}
 		return false;
 	}
-	public boolean destroyLastSessionOfClient(Client cl){
+	public boolean destroyLastSessionOfClient(RClient cl){
 		int keys=this.getKeyByClient(cl);
 		if(keys!=-1){
 			session.remove(keys);
 		}
 		return true;
 	}
-	private int getKeyByClient(Client cl){
+	private int getKeyByClient(RClient cl){
 		Enumeration<Integer> enumKey = session.keys();
 		while(enumKey.hasMoreElements()) {
 		    Integer key = enumKey.nextElement();

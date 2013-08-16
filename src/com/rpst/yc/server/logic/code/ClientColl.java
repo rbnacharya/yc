@@ -2,11 +2,10 @@ package com.rpst.yc.server.logic.code;
 
 import java.util.Dictionary;
 import java.util.Enumeration;
-import java.util.Hashtable;
-
 import com.rpst.yc.client.logic.code.Client;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.def.IClientColl;
+import java.util.Hashtable;
 
 public class ClientColl {
 	private static int totalConnected;
@@ -35,14 +34,13 @@ public class ClientColl {
 	}
 	public boolean addClient(RClient client){
 		IClientColl ic=new IClientColl();
-		ic.setClient((Client)client);
+		ic.setClient(client);
 		cl_ids++;
 		ic.setID(cl_ids);
 		ic.setAvailable(true);
 		clients.put(new Integer(cl_ids), ic);
 		totalAvailable++;
 		totalConnected++;
-		
 		return true;
 	}
 	public boolean removeClient(Client cl){
@@ -52,7 +50,7 @@ public class ClientColl {
 		clients.remove(new Integer(id));
 		return true;
 	}
-	public Client getFreeClient(){
+	public RClient getFreeClient(){
 		int fkk=this.getFreeClientKey();
 		if(fkk!=-1){
 			return this.getClientFromKey(fkk);
@@ -77,7 +75,7 @@ public class ClientColl {
 		}
 		return false;
 	}
-	public Client getClientFromKey(int key){
+	public RClient getClientFromKey(int key){
 		IClientColl val=clients.get(new Integer(key));
 		return val.getClient();
 	}

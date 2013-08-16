@@ -1,11 +1,12 @@
 package com.rpst.yc.commons.dt.def;
 
 import com.rpst.yc.client.logic.code.Client;
+import com.rpst.yc.commons.def.RClient;
 
 public class IClientColl {
 	protected int ID;
 	protected boolean	Available;
-	protected Client Client;
+	protected RClient Client;
 	public int getID() {
 		return ID;
 	}
@@ -18,10 +19,10 @@ public class IClientColl {
 	public void setAvailable(boolean available) {
 		Available = available;
 	}
-	public Client getClient() {
+	public RClient getClient() {
 		return Client;
 	}
-	public void setClient(Client client) {
+	public void setClient(RClient client) {
 		Client = client;
 	}
 }

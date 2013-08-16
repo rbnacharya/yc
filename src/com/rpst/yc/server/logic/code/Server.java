@@ -8,6 +8,7 @@ import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.def.RServer;
 import com.rpst.yc.commons.dt.code.Computer;
 import com.rpst.yc.commons.dt.code.User;
+import java.rmi.RemoteException;
 
 public class Server extends Computer implements RServer {
 	protected ClientColl Clients;
@@ -20,13 +21,13 @@ public class Server extends Computer implements RServer {
 	
 	//Client Management
 	@Override
-	public boolean addClient(RClient cl){
+	public boolean addClient(RClient cl) throws RemoteException{
 		System.out.println("NEw Client Loaded");
 		return Clients.addClient(cl);
 		
 	}
 	@Override
-	public boolean removeClient(Client cl){
+	public boolean removeClient(Client cl) throws RemoteException{
 		return Clients.removeClient(cl);
 	}
 	public boolean isClientFree(){
@@ -49,7 +50,7 @@ public class Server extends Computer implements RServer {
 	//Session Management
 	public UUID createUserSession(User us){
 		if(isClientFree()){
-			Client cl=Clients.getFreeClient();
+			RClient cl=Clients.getFreeClient();
 			return sessions.createSession(cl, us);
 		}
 		return null;
@@ -77,5 +78,4 @@ public class Server extends Computer implements RServer {
 	public String getSlug() {
 		return YCValues.Server_slug;
 	}
-	// End Server instances
 }
