@@ -16,12 +16,12 @@ public class ServerInit {
 	public void play(){
 		 // Assign a security manager, in the event that dynamic
 	       // classes are loaded
-			
+               String rmiserver="rmi://192.168.1.5/";
 	       RServer server=new Server();
 	       try {
-			RServer stub=(RServer)UnicastRemoteObject.exportObject(server,0);
+                    RServer stub=(RServer)UnicastRemoteObject.exportObject(server,0);
 		    Registry reg=LocateRegistry.createRegistry(YCValues.RMI_PORT);
-		    reg.rebind(YCValues.Server_Class, stub);
+		    reg.rebind(rmiserver+YCValues.Server_Class, stub);
 		    System.out.println("Server Started at Port"+YCValues.RMI_PORT);
  
 		} catch (RemoteException e) {
