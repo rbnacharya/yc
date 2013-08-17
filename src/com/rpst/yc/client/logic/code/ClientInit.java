@@ -10,8 +10,11 @@ import com.rpst.yc.commons.def.RServer;
 public class ClientInit {
 	public ClientInit() {
 		 
-		  String serverIP=YCValues.ServerIP;
+		  String serverIP="49.244.87.59";
                   String rmiAdd="rmi://"+serverIP+"/";
+                  System.setProperty("sun.rmi.transport.tcp.responseTimeout", "0");
+
+                  
 		  try {
 			  Registry reg=LocateRegistry.getRegistry(serverIP,YCValues.RMI_PORT);
 			  RServer rser=(RServer) reg.lookup(rmiAdd+YCValues.Server_Class);
