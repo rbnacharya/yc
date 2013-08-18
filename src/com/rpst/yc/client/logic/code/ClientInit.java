@@ -10,7 +10,7 @@ import com.rpst.yc.commons.def.RServer;
 public class ClientInit {
 	public ClientInit() {
 		 
-		  String serverIP=YCValues.ServerIP;
+		  String serverIP= "49.244.87.59";
                   String rmiAdd="rmi://"+serverIP+"/";
 		  try {
 			  Registry reg=LocateRegistry.getRegistry(serverIP,YCValues.RMI_PORT);

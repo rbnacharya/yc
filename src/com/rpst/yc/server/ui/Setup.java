@@ -12,6 +12,7 @@ package com.rpst.yc.server.ui;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -151,6 +152,11 @@ public class Setup extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 102, 0));
         jButton3.setText("ADD");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 120, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 620, 400));
@@ -180,8 +186,8 @@ public class Setup extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 90));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-647)/2, (screenSize.height-531)/2, 647, 531);
+        setSize(new java.awt.Dimension(647, 531));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_addnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addnewActionPerformed
@@ -199,6 +205,12 @@ public class Setup extends javax.swing.JFrame {
         s.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_removeActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       Image img;
+       Main m = new Main();
+        //m.jPanel2.add(img);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
