@@ -1,14 +1,8 @@
 package com.rpst.yc.server.ui;
 
-
-
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-        
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -61,7 +55,7 @@ public static int start = 0;
         lbl_welcome.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         lbl_welcome.setForeground(new java.awt.Color(153, 153, 0));
         lbl_welcome.setText("Welcome to Yellow Cafe");
-        getContentPane().add(lbl_welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 330, -1));
+        getContentPane().add(lbl_welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 298, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -94,7 +88,7 @@ public static int start = 0;
         lbl_nomatch.setText("yc/yc"); // NOI18N
         jPanel1.add(lbl_nomatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 210, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 370, 180));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 60, 410, 180));
 
         btn_login.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_login.setText("Login");
@@ -114,10 +108,10 @@ public static int start = 0;
         });
         getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 100, 30));
 
-        setSize(new java.awt.Dimension(406, 344));
+        setSize(new java.awt.Dimension(406, 342));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-        public static Login l = new Login();
+   public static Login l = new Login();
     private static boolean isPasswordCorrect(char[] input) {
     boolean isCorrect = true;
     char[] correctPassword = { 'y', 'c' };
@@ -142,52 +136,62 @@ public static int start = 0;
             
              java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
-                    new Main().setVisible(true); 
-                             
-            }
-            
+                    final Main c = new Main();
+                    c.setVisible(true); 
+             }            
         });
             this.dispose();
-            this.setVisible(false);
-            
         }
         else
         { 
-           //lbl_nomatch.setText("Sorry, username or password do not matched. Please try again.");
            JOptionPane.showMessageDialog(rootPane,"Invalid username or password.", "YelloCafe", 0);
-           
         }
     }
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
         validity();
-        
-               
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
-        // TODO add your handling code here:
         txt_username.setText(null);
-        txt_password.setText(null);
-        //lbl_nomatch.setText(null);
+        txt_password.setText(null); 
     }//GEN-LAST:event_btn_cancelActionPerformed
 
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
-        // TODO add your handling code here:
         validity();
     }//GEN-LAST:event_txt_passwordActionPerformed
-
-     /**
+ 
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                     l.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                    l.setSize(390,330);
-                    l.setVisible(true);
-                                        
+                    l.setVisible(true);                           
               }
         });
     }
