@@ -400,7 +400,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_stopActionPerformed
 
     private void btn_addtimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addtimeActionPerformed
-       
+        AddTime adt = new AddTime();
+        adt.setVisible(true);
     }//GEN-LAST:event_btn_addtimeActionPerformed
 
     private void btn_comp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comp1ActionPerformed

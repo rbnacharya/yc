@@ -38,7 +38,6 @@ public class Frm_changePassword extends javax.swing.JFrame {
         btn_cancel = new javax.swing.JButton();
         btn_ok = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Change Password");
         setAlwaysOnTop(true);
         setLocationByPlatform(true);

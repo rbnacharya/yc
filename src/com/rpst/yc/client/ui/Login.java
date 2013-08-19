@@ -182,9 +182,9 @@ public static int start = 0;
              java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                
-                    final Main c = new Main();
+                    final ClientUIMain c = new ClientUIMain();
                     c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                    c.setLocation(500, 150);
+                    
                     c.lbl_prepaid_amt.setText("00.00");
                     c.lbl_traffic_amt.setText("00.00");
                     c.lbl_others_amt.setText("00.00");

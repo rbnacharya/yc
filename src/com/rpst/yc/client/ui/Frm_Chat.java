@@ -40,7 +40,6 @@ public class Frm_Chat extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_send1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chat");
         setAlwaysOnTop(true);
         setLocationByPlatform(true);
