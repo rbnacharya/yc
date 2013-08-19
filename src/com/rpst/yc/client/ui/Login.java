@@ -235,7 +235,7 @@ public static int start = 0;
         });
             this.dispose();
             //this.setVisible(false);
-            fullpage f1 = Main.f;
+            fullpage f1 = ClientUIMain.f;
            f1.setVisible(false);
              
         }

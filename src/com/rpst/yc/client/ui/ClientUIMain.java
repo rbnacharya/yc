@@ -252,6 +252,7 @@ public class ClientUIMain extends javax.swing.JFrame {
 
     private void btn_addTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTimeActionPerformed
         AddTime adt = new AddTime();
+        adt.lbl_user.setText("User: " + this.lbl_loginId.getText());
         adt.setVisible(true);
     }//GEN-LAST:event_btn_addTimeActionPerformed
 public static int start = 0;

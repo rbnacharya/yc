@@ -287,7 +287,7 @@ public class AddTime extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_currBalance;
     private javax.swing.JLabel lbl_prepaid;
     private javax.swing.JLabel lbl_time;
-    private javax.swing.JLabel lbl_user;
+    protected javax.swing.JLabel lbl_user;
     private javax.swing.JSpinner spin_addtime;
     // End of variables declaration//GEN-END:variables
 }
