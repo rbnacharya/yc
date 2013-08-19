@@ -8,7 +8,6 @@ import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.def.RServer;
 import com.rpst.yc.commons.dt.code.Computer;
 import com.rpst.yc.commons.dt.code.User;
-import com.rpst.yc.server.ui.Setup;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,8 +41,6 @@ public class Server extends Computer implements RServer {
 	// Client Commands
 	public Image getSnapshot(RClient cl){
             try {
-                Setup hell=Setup.getInstance(cl.get_snapshot());
-                hell.setVisible(true);
             } catch (RemoteException ex) {
                 Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             }

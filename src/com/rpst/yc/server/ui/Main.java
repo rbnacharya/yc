@@ -309,9 +309,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Setup st=new Setup();
-               st.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-               st.setVisible(true);
+                //Setup st=new Setup();
+               //st.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+               //st.setVisible(true);
             }
         });
     }//GEN-LAST:event_btn_setupActionPerformed
