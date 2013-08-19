@@ -1,8 +1,19 @@
 package com.rpst.yc.server.ui;
 
 
+import java.awt.BorderLayout;
 import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.imageio.*;
+import javax.swing.ImageIcon;
 
 /*
  * To change this template, choose Tools | Templates
@@ -36,6 +47,15 @@ public class Main extends javax.swing.JFrame {
         btn_comp1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        lbl_busy = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        btn_unpaid = new javax.swing.JButton();
+        lbl_payment = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btn_about = new javax.swing.JButton();
         btn_setup = new javax.swing.JButton();
@@ -49,6 +69,11 @@ public class Main extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         btn_logout = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        btn_start = new javax.swing.JButton();
+        btn_stop = new javax.swing.JButton();
+        btn_addtime = new javax.swing.JButton();
+        btn_communicate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
@@ -62,6 +87,11 @@ public class Main extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+        });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_comp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png"))); // NOI18N
@@ -70,22 +100,67 @@ public class Main extends javax.swing.JFrame {
                 btn_comp2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_comp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 90, 70));
+        jPanel2.add(btn_comp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 90, 70));
 
         btn_comp1.setBackground(new java.awt.Color(204, 204, 204));
         btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopoff.png"))); // NOI18N
-        jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, 70));
+        btn_comp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_comp1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 640, 620));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 640, 590));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 153, 0));
         jLabel14.setText("YELLOW CAFE");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 28));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 28));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, 270, 630));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_busy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbl_busy.setText("                Click on the busy terminal ...");
+        jPanel4.add(lbl_busy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 230));
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "Name"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 270, 310));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 270, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 270, 10));
+
+        btn_unpaid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_unpaid.setText("Unpaid");
+        btn_unpaid.setEnabled(false);
+        jPanel1.add(btn_unpaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 263, 80, 30));
+
+        lbl_payment.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbl_payment.setForeground(new java.awt.Color(255, 0, 0));
+        lbl_payment.setText("Get Payment");
+        lbl_payment.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        lbl_payment.setEnabled(false);
+        jPanel1.add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 290, 640));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +236,60 @@ public class Main extends javax.swing.JFrame {
         jLabel20.setText("LOGOUT");
         jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 150, 620));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 150, 630));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 620, 10));
+
+        btn_start.setBackground(new java.awt.Color(255, 255, 255));
+        btn_start.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Start.png"))); // NOI18N
+        btn_start.setText("START");
+        btn_start.setEnabled(false);
+        btn_start.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+
+        btn_stop.setBackground(new java.awt.Color(255, 255, 255));
+        btn_stop.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_stop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Stop.png"))); // NOI18N
+        btn_stop.setText("STOP");
+        btn_stop.setEnabled(false);
+        btn_stop.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        btn_stop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_stopActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
+
+        btn_addtime.setBackground(new java.awt.Color(255, 255, 255));
+        btn_addtime.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_addtime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Add-icon.png"))); // NOI18N
+        btn_addtime.setText("ADD TIME");
+        btn_addtime.setEnabled(false);
+        btn_addtime.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        btn_addtime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addtimeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
+
+        btn_communicate.setBackground(new java.awt.Color(255, 255, 255));
+        btn_communicate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_communicate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Add-icon.png"))); // NOI18N
+        btn_communicate.setText("Communicate");
+        btn_communicate.setEnabled(false);
+        btn_communicate.setMargin(new java.awt.Insets(2, 2, 2, 10));
+        btn_communicate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_communicateActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_communicate, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, -1, -1));
 
         setSize(new java.awt.Dimension(1136, 749));
         setLocationRelativeTo(null);
@@ -189,9 +317,99 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_setupActionPerformed
 
     private void btn_comp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comp2ActionPerformed
+        JPanel_BusyTerminal bt = new JPanel_BusyTerminal();
+        btn_addtime.setEnabled(true);
+        btn_stop.setEnabled(true);
+        btn_communicate.setEnabled(true);
+        btn_start.setEnabled(false);
+        
+        jPanel4.removeAll();
+        jPanel4.setLayout(new BorderLayout());
+        jPanel4.add(bt);
+        jPanel4.validate();
+        jPanel4.setVisible(true);
+    }//GEN-LAST:event_btn_comp2ActionPerformed
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        Create_Session cs = new Create_Session();
+        cs.setVisible(true);
+        
+        JPanel_BusyTerminal bt = new JPanel_BusyTerminal();
+        jPanel4.removeAll();
+        jPanel4.setLayout(new BorderLayout());
+        jPanel4.add(bt);
+        jPanel4.validate();
+        
+        btn_addtime.setEnabled(true);
+        btn_stop.setEnabled(true);
+        btn_communicate.setEnabled(true);
+        btn_start.setEnabled(false);
+        btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png")));
+        
+        
+        
+       
+    }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stopActionPerformed
+        btn_start.setEnabled(false);
+        btn_stop.setEnabled(false);
+        btn_addtime.setEnabled(false);
+        btn_communicate.setEnabled(false);
+        
+        Payment pm = new Payment();
+        pm.setVisible(true);        
+    }//GEN-LAST:event_btn_stopActionPerformed
+
+    private void btn_addtimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addtimeActionPerformed
+       
+    }//GEN-LAST:event_btn_addtimeActionPerformed
+
+    private void btn_comp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comp1ActionPerformed
+        int active = 0;
+        if(active==0){
+            btn_start.setEnabled(true);
+            btn_stop.setEnabled(false);
+            btn_addtime.setEnabled(false);
+            btn_communicate.setEnabled(false);
+            active++;
+            
+            jPanel4.removeAll();
+            jPanel4.setLayout(new BorderLayout());
+            jPanel4.add(lbl_busy);
+            jPanel4.validate();
+        }
+        else
+        {
+            btn_start.setEnabled(false);
+            btn_stop.setEnabled(true);
+            btn_addtime.setEnabled(true);
+            btn_communicate.setEnabled(true);
+            jPanel4.removeAll();
+            jPanel4.setLayout(new BorderLayout());
+            jPanel4.add(lbl_busy);
+            jPanel4.validate();
+        }
+        
+    }//GEN-LAST:event_btn_comp1ActionPerformed
+
+    private void btn_communicateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_communicateActionPerformed
         Details dt = new Details();
         dt.setVisible(true);
-    }//GEN-LAST:event_btn_comp2ActionPerformed
+    }//GEN-LAST:event_btn_communicateActionPerformed
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        btn_start.setEnabled(false);
+        btn_stop.setEnabled(false);
+        btn_addtime.setEnabled(false);
+        btn_communicate.setEnabled(false);
+        
+        jPanel4.removeAll();
+        jPanel4.setLayout(new BorderLayout());
+        jPanel4.add(lbl_busy);
+        jPanel4.validate();
+        jPanel4.setVisible(true);
+    }//GEN-LAST:event_jPanel2MouseClicked
 //cursor setting method
     public static void btn_set_cursor(Main main) {
         main.btn_about.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -241,12 +459,17 @@ public class Main extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_about;
+    private javax.swing.JButton btn_addtime;
+    private javax.swing.JButton btn_communicate;
     private javax.swing.JButton btn_comp1;
     private javax.swing.JButton btn_comp2;
     private javax.swing.JButton btn_logout;
     private javax.swing.JButton btn_setup;
+    private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_statistics;
+    private javax.swing.JButton btn_stop;
     private javax.swing.JButton btn_timecode;
+    private javax.swing.JButton btn_unpaid;
     private javax.swing.JButton btn_users;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
@@ -258,5 +481,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lbl_busy;
+    private javax.swing.JLabel lbl_payment;
     // End of variables declaration//GEN-END:variables
 }

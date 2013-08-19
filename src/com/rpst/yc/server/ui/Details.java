@@ -56,88 +56,88 @@ public class Details extends javax.swing.JFrame {
 
         setFocusCycleRoot(false);
         setMaximumSize(new java.awt.Dimension(1380, 760));
-        setPreferredSize(new java.awt.Dimension(1260, 740));
+        setPreferredSize(new java.awt.Dimension(1200, 740));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_compname5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname5.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname5.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 210, 20));
+        getContentPane().add(txt_compname5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 190, 20));
 
-        txt_compname4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname4.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname4.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 210, 20));
+        getContentPane().add(txt_compname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 190, 20));
 
-        txt_compname3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname3.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname3.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 210, 20));
+        getContentPane().add(txt_compname3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 190, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Select the Terminal");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
-        txt_compname6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname6.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname6.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 210, 20));
+        getContentPane().add(txt_compname6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 190, 20));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Space Available:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-        txt_compname7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname7.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname7.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 210, 20));
+        getContentPane().add(txt_compname7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 190, 20));
 
-        txt_compname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 210, 20));
+        getContentPane().add(txt_compname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 190, 20));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Internet Access:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Available Bandwidth:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
 
-        txt_ipaddress.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_ipaddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_ipaddress.setForeground(new java.awt.Color(0, 102, 102));
         txt_ipaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_ipaddress.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_ipaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 210, 20));
+        getContentPane().add(txt_ipaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 190, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("IP address:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Processor:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Memory (RAM):");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktop8.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 150, 120));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, 110));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 210, 30));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 210, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Computer Name: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         btn_screenCapture.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_screenCapture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/screencapture.png"))); // NOI18N
@@ -148,18 +148,18 @@ public class Details extends javax.swing.JFrame {
                 btn_screenCaptureActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_screenCapture, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 220, 40));
+        getContentPane().add(btn_screenCapture, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 210, 40));
 
         btn_chat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/chat.jpg"))); // NOI18N
         btn_chat.setText("Chat");
-        btn_chat.setMargin(new java.awt.Insets(2, 2, 2, 70));
+        btn_chat.setMargin(new java.awt.Insets(2, 2, 2, 40));
         btn_chat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_chatActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 190, 40));
+        getContentPane().add(btn_chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 160, 40));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -174,7 +174,7 @@ public class Details extends javax.swing.JFrame {
             .addGap(0, 468, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 410, 470));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 410, 470));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -189,26 +189,27 @@ public class Details extends javax.swing.JFrame {
             .addGap(0, 468, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 430, 470));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, 430, 470));
 
         btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn_cancel.setForeground(new java.awt.Color(255, 0, 0));
         btn_cancel.setText("Cancel");
         btn_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 620, 160, 50));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 160, 50));
 
-        txt_compname8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt_compname8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_compname8.setForeground(new java.awt.Color(0, 102, 102));
         txt_compname8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txt_compname8.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 210, 20));
+        getContentPane().add(txt_compname8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 190, 20));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Operating System:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
