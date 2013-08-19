@@ -58,7 +58,6 @@ public class Setup extends javax.swing.JFrame {
         btn_addnew = new javax.swing.JButton();
         btn_remove = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Setup");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);

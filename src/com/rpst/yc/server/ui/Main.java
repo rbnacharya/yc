@@ -45,7 +45,6 @@ public class Main extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_comp2 = new javax.swing.JButton();
         btn_comp1 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lbl_busy = new javax.swing.JLabel();
@@ -74,6 +73,13 @@ public class Main extends javax.swing.JFrame {
         btn_stop = new javax.swing.JButton();
         btn_addtime = new javax.swing.JButton();
         btn_communicate = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
@@ -81,7 +87,7 @@ public class Main extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setLocationByPlatform(true);
         setName("Yello Cafe"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1110, 740));
+        setPreferredSize(new java.awt.Dimension(1150, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,12 +117,7 @@ public class Main extends javax.swing.JFrame {
         });
         jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 640, 590));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel14.setText("YELLOW CAFE");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 28));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 640, 590));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -142,7 +143,7 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 220));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 270, 310));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 270, 10));
@@ -160,14 +161,14 @@ public class Main extends javax.swing.JFrame {
         lbl_payment.setEnabled(false);
         jPanel1.add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 290, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 290, 630));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_about.setBackground(new java.awt.Color(153, 153, 255));
         btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/About.jpg"))); // NOI18N
-        jPanel3.add(btn_about, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, 70));
+        jPanel3.add(btn_about, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 80, 70));
 
         btn_setup.setBackground(new java.awt.Color(153, 153, 255));
         btn_setup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/setting-icon.png"))); // NOI18N
@@ -176,11 +177,11 @@ public class Main extends javax.swing.JFrame {
                 btn_setupActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_setup, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 80, 70));
+        jPanel3.add(btn_setup, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 80, 70));
 
         btn_statistics.setBackground(new java.awt.Color(153, 153, 255));
         btn_statistics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/statistics.jpg"))); // NOI18N
-        jPanel3.add(btn_statistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 80, 70));
+        jPanel3.add(btn_statistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 80, 70));
 
         btn_users.setBackground(new java.awt.Color(153, 153, 255));
         btn_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/users.jpg"))); // NOI18N
@@ -189,36 +190,36 @@ public class Main extends javax.swing.JFrame {
                 btn_usersActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 80, 70));
+        jPanel3.add(btn_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 80, 70));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 51, 51));
         jLabel17.setText("STATISTICS");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         btn_timecode.setBackground(new java.awt.Color(153, 153, 255));
         btn_timecode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/timecode.jpg"))); // NOI18N
-        jPanel3.add(btn_timecode, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 80, 70));
+        jPanel3.add(btn_timecode, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 80, 70));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 51, 51));
         jLabel21.setText("ABOUT");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 51, 51));
         jLabel22.setText("SETUP");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 51, 51));
         jLabel23.setText("USERS");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 51, 51));
         jLabel19.setText("TIMECODE");
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         btn_logout.setBackground(new java.awt.Color(153, 153, 255));
         btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/logout.jpg"))); // NOI18N
@@ -229,15 +230,15 @@ public class Main extends javax.swing.JFrame {
                 btn_logoutActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 80, 70));
+        jPanel3.add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 80, 70));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 51, 51));
         jLabel20.setText("LOGOUT");
         jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 150, 630));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 620, 10));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 160, 630));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 620, 10));
 
         btn_start.setBackground(new java.awt.Color(255, 255, 255));
         btn_start.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -250,7 +251,7 @@ public class Main extends javax.swing.JFrame {
                 btn_startActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         btn_stop.setBackground(new java.awt.Color(255, 255, 255));
         btn_stop.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -263,7 +264,7 @@ public class Main extends javax.swing.JFrame {
                 btn_stopActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
+        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
         btn_addtime.setBackground(new java.awt.Color(255, 255, 255));
         btn_addtime.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -276,7 +277,7 @@ public class Main extends javax.swing.JFrame {
                 btn_addtimeActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
+        getContentPane().add(btn_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
 
         btn_communicate.setBackground(new java.awt.Color(255, 255, 255));
         btn_communicate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -289,14 +290,51 @@ public class Main extends javax.swing.JFrame {
                 btn_communicateActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_communicate, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, -1, -1));
+        getContentPane().add(btn_communicate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, -1));
 
-        setSize(new java.awt.Dimension(1136, 749));
+        jMenuBar1.setBorder(null);
+        jMenuBar1.setAutoscrolls(true);
+        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jMenu1.setText("About");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu1.setPreferredSize(new java.awt.Dimension(70, 20));
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Setup");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu2.setPreferredSize(new java.awt.Dimension(70, 20));
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Statistics");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu3.setPreferredSize(new java.awt.Dimension(80, 20));
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Users");
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu4.setPreferredSize(new java.awt.Dimension(70, 20));
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Timecode");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu5.setPreferredSize(new java.awt.Dimension(90, 20));
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Log out");
+        jMenu6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu6.setPreferredSize(new java.awt.Dimension(70, 20));
+        jMenuBar1.add(jMenu6);
+
+        setJMenuBar(jMenuBar1);
+
+        setSize(new java.awt.Dimension(1156, 749));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
-        // TODO add your handling code here:
+        Frm_User usr = new Frm_User();
+        usr.setVisible(true);
     }//GEN-LAST:event_btn_usersActionPerformed
 
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
@@ -471,13 +509,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btn_timecode;
     private javax.swing.JButton btn_unpaid;
     private javax.swing.JButton btn_users;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

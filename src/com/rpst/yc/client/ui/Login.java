@@ -57,7 +57,7 @@ public static int start = 0;
         txt_serverIP = new javax.swing.JTextField();
         btn_connect = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Login");
         setAlwaysOnTop(true);
         setExtendedState(2);
@@ -149,8 +149,8 @@ public static int start = 0;
         });
         getContentPane().add(btn_connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 100, 30));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-406)/2, (screenSize.height-464)/2, 406, 464);
+        setSize(new java.awt.Dimension(406, 464));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public static fullpage f = new fullpage();
     public static Login l = new Login();
