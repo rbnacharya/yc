@@ -4,7 +4,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
-import com.rpst.yc.client.logic.code.Client;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.code.User;
 

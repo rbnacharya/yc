@@ -12,6 +12,9 @@ package com.rpst.yc.server.ui;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +26,16 @@ public class Setup extends javax.swing.JFrame {
      */
     public Setup() {
         initComponents();
+    }
+    private Setup(Image img){
+        initComponents();
+        JLabel piclabel=new JLabel(new ImageIcon(img));
+        jPanel3.add(piclabel);
+    }
+    public static Setup var;
+    public static Setup getInstance(Image img){
+        var=new Setup(img);
+        return var;
     }
 
     /**
@@ -53,6 +66,7 @@ public class Setup extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btn_addnew = new javax.swing.JButton();
         btn_remove = new javax.swing.JButton();
@@ -153,6 +167,10 @@ public class Setup extends javax.swing.JFrame {
         jButton3.setText("ADD");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 120, 40));
 
+        jPanel3.setName("pnl_img"); // NOI18N
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 160));
+        jPanel3.getAccessibleContext().setAccessibleName("jpnl_img");
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 620, 400));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -180,8 +198,8 @@ public class Setup extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 90));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-647)/2, (screenSize.height-531)/2, 647, 531);
+        setSize(new java.awt.Dimension(647, 531));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_addnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addnewActionPerformed
@@ -256,6 +274,7 @@ public class Setup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txt_compname;
     private javax.swing.JTextField txt_compname2;
     private javax.swing.JTextField txt_compname3;

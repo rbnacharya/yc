@@ -16,8 +16,10 @@ public class ServerInit {
 	public void play(){
 		 // Assign a security manager, in the event that dynamic
 	       // classes are loaded
-            String ipadd=YCValues.ServerIP;
-                System.setProperty("java.rmi.server.hostname", ipadd);
+            if(System.getSecurityManager()==null)
+                System.setSecurityManager(new SecurityManager());
+            String ipadd="192.168.2.10";
+               System.setProperty("java.rmi.server.hostname", ipadd);
 
                String rmiserver="rmi://"+ipadd+"/";
 	       RServer server=new Server();
