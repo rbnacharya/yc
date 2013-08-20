@@ -76,7 +76,12 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenu11 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -304,11 +309,38 @@ public class Main extends javax.swing.JFrame {
         jMenu2.setText("Setup");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenu2.setPreferredSize(new java.awt.Dimension(70, 20));
+
+        jMenu7.setText("Terminals");
+        jMenu7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu7.setPreferredSize(new java.awt.Dimension(100, 20));
+        jMenu2.add(jMenu7);
+
+        jMenu8.setText("Users");
+        jMenu8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu8.setPreferredSize(new java.awt.Dimension(100, 20));
+        jMenu2.add(jMenu8);
+
+        jMenu9.setText("Cost");
+        jMenu9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu9.setPreferredSize(new java.awt.Dimension(100, 20));
+        jMenu2.add(jMenu9);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Statistics");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenu3.setPreferredSize(new java.awt.Dimension(80, 20));
+
+        jMenu10.setText("Customers");
+        jMenu10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu10.setPreferredSize(new java.awt.Dimension(100, 20));
+        jMenu3.add(jMenu10);
+
+        jMenu11.setText("Sells");
+        jMenu11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenu11.setPreferredSize(new java.awt.Dimension(100, 20));
+        jMenu3.add(jMenu11);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Users");
@@ -517,11 +549,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

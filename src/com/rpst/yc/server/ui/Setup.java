@@ -35,180 +35,110 @@ public class Setup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        txt_compname5 = new javax.swing.JTextField();
-        txt_compname4 = new javax.swing.JTextField();
-        txt_compname3 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txt_compname6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txt_compname7 = new javax.swing.JTextField();
-        txt_compname = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txt_compname2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        btn_addnew = new javax.swing.JButton();
-        btn_remove = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        btn_addNew = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
+        btn_delete1 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setTitle("Setup");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_compname5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname5.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname5.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 200, 30));
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Terminal", "Computer Name", "Profile", "IP Address", "---"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
+            };
 
-        txt_compname4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname4.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname4.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 200, 30));
-
-        txt_compname3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname3.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname3.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 200, 30));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Computer Name: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
-
-        txt_compname6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname6.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname6.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 200, 30));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Space Available:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
-
-        txt_compname7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname7.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname7.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 200, 30));
-
-        txt_compname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 200, 30));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Internet Access:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Available Bandwidth:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
-
-        txt_compname2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txt_compname2.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname2.setName("txt_compname"); // NOI18N
-        jPanel1.add(txt_compname2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 30));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Operating System:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("System Info:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Processor:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Installed Memory (RAM):");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktop8.png"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 150, 140));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 102, 0));
-        jButton2.setText("Cancel");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 120, 40));
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 102, 0));
-        jButton3.setText("ADD");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 120, 40));
+        jTable1.setCellSelectionEnabled(true);
+        jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 620, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 230));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 61, 820, 370));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 780, 10));
 
-        btn_addnew.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_addnew.setForeground(new java.awt.Color(0, 102, 255));
-        btn_addnew.setText("Add New Terminal");
-        btn_addnew.addActionListener(new java.awt.event.ActionListener() {
+        btn_addNew.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_addNew.setForeground(new java.awt.Color(0, 51, 0));
+        btn_addNew.setText("Add New ...");
+        btn_addNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_addnewActionPerformed(evt);
+                btn_addNewActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_addnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 52));
+        jPanel3.add(btn_addNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 30));
 
-        btn_remove.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_remove.setForeground(new java.awt.Color(0, 102, 255));
-        btn_remove.setText("Remove Terminal");
-        btn_remove.addActionListener(new java.awt.event.ActionListener() {
+        btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_edit.setForeground(new java.awt.Color(0, 0, 51));
+        btn_edit.setText("Edit ...");
+        jPanel3.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 100, 30));
+
+        btn_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_delete.setForeground(new java.awt.Color(51, 0, 0));
+        btn_delete.setText("Delete ...");
+        jPanel3.add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 100, 30));
+
+        btn_delete1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_delete1.setForeground(new java.awt.Color(51, 0, 0));
+        btn_delete1.setText("Close");
+        btn_delete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_removeActionPerformed(evt);
+                btn_delete1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 159, 52));
+        jPanel3.add(btn_delete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 100, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 90));
+        jTabbedPane1.addTab("Terminal Setup", jPanel3);
+        jTabbedPane1.addTab("Cost Setup", jPanel5);
+        jTabbedPane1.addTab("Users Setup", jPanel4);
 
-        setSize(new java.awt.Dimension(647, 531));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 550));
+
+        setSize(new java.awt.Dimension(866, 589));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_addnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addnewActionPerformed
-        Terminal t = new Terminal();
-        t.setVisible(true);
-        //this.setVisible(false);
-    }//GEN-LAST:event_btn_addnewActionPerformed
+    private void btn_addNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addNewActionPerformed
+        Terminal  ter = new Terminal();
+        ter.setVisible(true);
+    }//GEN-LAST:event_btn_addNewActionPerformed
 
-    private void btn_removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removeActionPerformed
-        Setup s= new Setup();
-        JPanel_Detail jd = new JPanel_Detail();
-        s.jPanel1.setLayout(new java.awt.BorderLayout());
-        s.jPanel1.add(jd);
-        s.jPanel1.validate();
-        s.setVisible(true);
+    private void btn_delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delete1ActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_btn_removeActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Image img;
-       Main m = new Main();
-        //m.jPanel2.add(img);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_delete1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,27 +181,17 @@ public class Setup extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_addnew;
-    private javax.swing.JButton btn_remove;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txt_compname;
-    private javax.swing.JTextField txt_compname2;
-    private javax.swing.JTextField txt_compname3;
-    private javax.swing.JTextField txt_compname4;
-    private javax.swing.JTextField txt_compname5;
-    private javax.swing.JTextField txt_compname6;
-    private javax.swing.JTextField txt_compname7;
+    private javax.swing.JButton btn_addNew;
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_delete1;
+    private javax.swing.JButton btn_edit;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
