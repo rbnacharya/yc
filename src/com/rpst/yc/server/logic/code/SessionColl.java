@@ -1,17 +1,20 @@
 package com.rpst.yc.server.logic.code;
 
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.Hashtable;
+// Singleton class
 import java.util.UUID;
+
+import com.rpst.yc.client.logic.code.Client;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.code.User;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 public class SessionColl {
-	HashMap session;
+	Dictionary<Integer, ServerSession> session;
 	private static SessionColl inssess;
 	private SessionColl() {
-		session=new HashMap();
+		session=new Hashtable<Integer,ServerSession>();
 	}
 	public static SessionColl getInstance(){
 		if(inssess==null){
@@ -29,10 +32,10 @@ public class SessionColl {
 	}
 	
 	public boolean startSession(User ur){
-                Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getUser().equals(ur)){
 		    	val.start();return true;
 		    }
@@ -40,10 +43,10 @@ public class SessionColl {
 		return false;
 	}
 	public RClient getClientFUser(User ur){
-                Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getUser().equals(ur)){
 		    	return val.getClientt();
 		    }
@@ -52,10 +55,10 @@ public class SessionColl {
 	}
 	
 	public boolean stopSession(User ur){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getUser().equals(ur)){
 		    	val.stop();return true;
 		    }
@@ -63,10 +66,10 @@ public class SessionColl {
 		return false;
 	}
 	public RClient getClientFromUUID(UUID sid){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getSession_id().equals(sid)){
 		    	return val.getClientt();
 		    }
@@ -74,10 +77,10 @@ public class SessionColl {
 		return null;
 	}
 	public int getCostPerSession(UUID sid){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getSession_id().equals(sid)){
 		    	return val.getUPC();
 		    }
@@ -86,11 +89,10 @@ public class SessionColl {
 
 	}
 	public boolean destroySession(UUID sid){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    int key = (Integer)me.getKey();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getSession_id().equals(sid)){
 		    	session.remove(key);
 		    	return true;
@@ -106,11 +108,10 @@ public class SessionColl {
 		return true;
 	}
 	private int getKeyByClient(RClient cl){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
-		    int key = (Integer)me.getKey();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getClientt().equals(cl)){
 		    	return key;
 		    }
@@ -118,10 +119,10 @@ public class SessionColl {
 		return -1;
 	}
 	private boolean checkUniqueUUID(UUID uni){
-		Iterator i=session.entrySet().iterator();
-		while(i.hasNext()) {
-                    Map.Entry me=(Map.Entry)i.next();
-		    ServerSession val = (ServerSession)me.getValue();
+		Enumeration<Integer> enumKey = session.keys();
+		while(enumKey.hasMoreElements()) {
+		    Integer key = enumKey.nextElement();
+		    ServerSession val = session.get(key);
 		    if(val.getSession_id().equals(uni)){
 		    	return false;
 		    }

@@ -185,8 +185,8 @@ public class Setup extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 90));
 
-        setSize(new java.awt.Dimension(647, 531));
-        setLocationRelativeTo(null);
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-647)/2, (screenSize.height-531)/2, 647, 531);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_addnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addnewActionPerformed

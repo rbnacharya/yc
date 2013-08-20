@@ -53,9 +53,12 @@ public class ServerInit {
 	public void play() throws BindException{
 		 // Assign a security manager, in the event that dynamic
 	       // classes are loaded
+
             if(System.getSecurityManager()==null)
                 System.setSecurityManager(new SecurityManager());
             	System.setProperty("java.rmi.server.hostname", this.serverIP);
+            String ipadd=YCValues.ServerIP;
+                System.setProperty("java.rmi.server.hostname", ipadd);
 
                String rmiserver="rmi://"+this.serverIP+"/";
 	       RServer server=new Server();

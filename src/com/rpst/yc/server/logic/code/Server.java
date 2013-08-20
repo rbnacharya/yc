@@ -1,15 +1,19 @@
 package com.rpst.yc.server.logic.code;
 import java.awt.Image;
+
 import java.rmi.RemoteException;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.UUID;
 
+import com.rpst.yc.client.logic.code.Client;
 import com.rpst.yc.commons.code.YCValues;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.def.RServer;
 import com.rpst.yc.commons.dt.code.Computer;
 import com.rpst.yc.commons.dt.code.User;
+import java.rmi.RemoteException;
 
 public class Server extends Computer implements RServer {
 	protected ClientColl Clients;
@@ -25,7 +29,6 @@ public class Server extends Computer implements RServer {
 	@Override
 	public boolean addClient(RClient cl) throws RemoteException{
 		System.out.println("NEw Client Loaded");
-                this.getSnapshot(cl);
 		return Clients.addClient(cl);
 		
 	}
@@ -40,14 +43,17 @@ public class Server extends Computer implements RServer {
 		return this.Clients;
 	}
 	// Client Commands
+
 	public Image getSnapshot(RClient cl){
 		return null;
 	}
-	public boolean sendMessage(RClient cl){
+	public boolean sendMessage(Client cl){
 		return true;
 	}
+	
 	//Client commands
 	//End Client Management
+	
 	//Session Management
 	public UUID createUserSession(User us){
 		if(isClientFree()){
@@ -69,6 +75,7 @@ public class Server extends Computer implements RServer {
 		return this.sessions;
 	}
 	// -end Session Management
+	
 	// Server instances
 	@Override
 	public int getType() {
