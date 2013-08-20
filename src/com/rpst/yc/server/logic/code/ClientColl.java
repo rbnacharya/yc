@@ -2,7 +2,6 @@ package com.rpst.yc.server.logic.code;
 
 import java.util.Dictionary;
 import java.util.Enumeration;
-import com.rpst.yc.client.logic.code.Client;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.dt.def.IClientColl;
 import java.util.Hashtable;
@@ -99,10 +98,10 @@ public class ClientColl {
 		}
 		return false;
 	}
-	public boolean releaseClient(Client cl){
+	public boolean releaseClient(RClient cl){
 		return this.consumereleaseClient(cl, true);
 	}
-	public boolean consumeClient(Client cl){
+	public boolean consumeClient(RClient cl){
 		return this.consumereleaseClient(cl, false);
 	}
 }
