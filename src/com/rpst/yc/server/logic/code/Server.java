@@ -1,19 +1,20 @@
 package com.rpst.yc.server.logic.code;
 import java.awt.Image;
-import java.util.UUID;
 import java.rmi.RemoteException;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.rpst.yc.commons.code.YCValues;
 import com.rpst.yc.commons.def.RClient;
 import com.rpst.yc.commons.def.RServer;
 import com.rpst.yc.commons.dt.code.Computer;
 import com.rpst.yc.commons.dt.code.User;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Server extends Computer implements RServer {
 	protected ClientColl Clients;
 	protected SessionColl sessions;
+	public final static Logger LOGGER=Logger.getLogger(Server.class.getName());
 	public Server() {
 		super("","");
 		Clients=ClientColl.getInstance();
@@ -40,10 +41,6 @@ public class Server extends Computer implements RServer {
 	}
 	// Client Commands
 	public Image getSnapshot(RClient cl){
-            try {
-            } catch (RemoteException ex) {
-                Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
-            }
 		return null;
 	}
 	public boolean sendMessage(RClient cl){
