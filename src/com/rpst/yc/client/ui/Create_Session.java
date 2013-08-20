@@ -2,7 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rpst.yc.server.ui;
+package com.rpst.yc.client.ui;
+
+import static com.rpst.yc.client.ui.Login.start;
+import com.rpst.yc.server.ui.*;
+import java.sql.Time;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.swing.JFrame;
 
 /**
  *
@@ -28,9 +35,6 @@ public class Create_Session extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lbl_user = new javax.swing.JLabel();
-        btn_addnew = new javax.swing.JButton();
-        cbo_users = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -38,9 +42,9 @@ public class Create_Session extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         cbo_client_terminal = new javax.swing.JComboBox();
         cbo_bandwidth = new javax.swing.JComboBox();
-        jButton3 = new javax.swing.JButton();
+        btn_cancel = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btn_create = new javax.swing.JButton();
         txt_age = new javax.swing.JTextField();
         txt_fullname = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
@@ -55,7 +59,6 @@ public class Create_Session extends javax.swing.JFrame {
 
         setTitle("Create Sesion");
         setAlwaysOnTop(true);
-        setPreferredSize(new java.awt.Dimension(590, 630));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,21 +78,9 @@ public class Create_Session extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 140));
 
-        lbl_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbl_user.setText("User");
-        getContentPane().add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
-        btn_addnew.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_addnew.setText("Add New ...");
-        getContentPane().add(btn_addnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, 30));
-
-        cbo_users.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_users.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Guest", "User1", "User2", "User3" }));
-        getContentPane().add(cbo_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 280, 30));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Select Users ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        lbl_user.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbl_user.setText("Login Id ");
+        getContentPane().add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Select Bandwidth");
@@ -110,41 +101,51 @@ public class Create_Session extends javax.swing.JFrame {
 
         cbo_client_terminal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_client_terminal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PC1", "PC2", "PC3", "PC4" }));
+        cbo_client_terminal.setEnabled(false);
         getContentPane().add(cbo_client_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 230, 30));
 
         cbo_bandwidth.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_bandwidth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "128 Kbps", "256 Kbps", "512 Kbps", "1 Mbps", " " }));
         getContentPane().add(cbo_bandwidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 230, 30));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Cancel");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cancel.setText("Cancel");
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 100, 30));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 100, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Client Terminal");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Create");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
+        btn_create.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_create.setText("Create");
+        btn_create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
+        txt_age.setEditable(false);
         txt_age.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 230, 30));
 
+        txt_fullname.setEditable(false);
         txt_fullname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 30));
 
+        txt_address.setEditable(false);
         txt_address.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 230, 30));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 540, 10));
 
         cbo_client_terminal1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_client_terminal1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Standard", "Employee", "Student" }));
+        cbo_client_terminal1.setEnabled(false);
         getContentPane().add(cbo_client_terminal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 230, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -163,6 +164,7 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel10.setText("Current Balance");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
+        txt_age1.setEditable(false);
         txt_age1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_age1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 540, 10));
@@ -171,9 +173,74 @@ public class Create_Session extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    public void exitSession()
+    {
+        //fullpage.getInstance().setVisible(true);
+        Login.getInstance().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }
+    public void CreateSession()
+    {
+        ClientUIMain cl = new ClientUIMain();
+        cl.setVisible(true);
+        this.setVisible(false);
+    }
+    public void start()
+    {
+        final ClientUIMain c = new ClientUIMain();
+        c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                  
+        c.lbl_prepaid_amt.setText("00.00");
+        c.lbl_traffic_amt.setText("00.00");
+        c.lbl_others_amt.setText("00.00");
+        c.lbl_total_amt.setText("10.00");
+        c.lbl_balance.setText("00.00");
+                   
+        c.lbl_loginId.setText("yc");
+        c.lbl_name.setText("YelloCafe");
+        c.lbl_pricing.setText("Employee");
+        c.lbl_payment.setText("Post-Paid");
+                    
+        Timer timer=new Timer();
+        final Time t1=new Time(0,0,0);
+        timer.schedule(new TimerTask() {                    
+        public void run() {
+             if(start==1)
+             {
+                t1.setTime(t1.getTime());
+             }
+             else
+             {
+                 t1.setTime(t1.getTime() + 1000);
+             }
+                  
+             c.lbl_time.setText(String.valueOf(t1));
+             if(t1.getMinutes()<10){
+                c.lbl_time_amt.setText("10.00");
+                c.lbl_total_amt.setText("10.00");
+             }
+             else if(t1.getMinutes()>=10 && t1.getMinutes()<30){
+                 c.lbl_time_amt.setText("20.00");
+                 c.lbl_total_amt.setText("20.00");
+             }
+             else{
+                  c.lbl_time_amt.setText("30.00");
+                  c.lbl_total_amt.setText("30.00");
+             }
+           }
+         }, 0,1000);
+                    
+         c.setVisible(true);
+         fullpage.getInstance().setVisible(false);
+         this.setVisible(false);
+    }
+    private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
+        exitSession();
+    }//GEN-LAST:event_btn_cancelActionPerformed
+
+    private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
+        start();
+    }//GEN-LAST:event_btn_createActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,16 +277,13 @@ public class Create_Session extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_addnew;
+    private javax.swing.JButton btn_cancel;
+    private javax.swing.JButton btn_create;
     private javax.swing.JComboBox cbo_bandwidth;
     private javax.swing.JComboBox cbo_client_terminal;
     private javax.swing.JComboBox cbo_client_terminal1;
     private javax.swing.JComboBox cbo_client_terminal2;
-    private javax.swing.JComboBox cbo_users;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

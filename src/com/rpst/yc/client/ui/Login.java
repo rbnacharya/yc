@@ -1,11 +1,5 @@
 package com.rpst.yc.client.ui;
 
-
-import java.awt.GraphicsDevice;
-import java.awt.Robot;
-import java.awt.Window;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.sql.Time;
 import javax.swing.JFrame;
 import java.util.Arrays;
@@ -30,9 +24,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        this.addKeyListener(new KeyAdapter() {});
     }
-public static int start = 0;
+    public static int start = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -152,116 +145,64 @@ public static int start = 0;
         setSize(new java.awt.Dimension(406, 464));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    public static fullpage f = new fullpage();
-    public static Login l = new Login();
-    private static boolean isPasswordCorrect(char[] input) {
-    boolean isCorrect = true;
-    char[] correctPassword = { 'y', 'c' };
-
-    if (input.length != correctPassword.length) {
-        isCorrect = false;
-    } else {
-        isCorrect = Arrays.equals (input, correctPassword);
-    }
-
-    //Zero out the password.
-    Arrays.fill(correctPassword,'0');
-
-    return isCorrect;
-}
     
-        GraphicsDevice myDevice = null;
-        Window myWindow = null;  
+    static Login logon;
+    public static Login getInstance(){
+        if(logon==null){
+            logon=new Login();
+        }
+        return logon;
+    }
+    
+    private void createSession()
+    {
+        Create_Session ccs =new Create_Session();
+        ccs.setVisible(true);
+        //fullpage.getInstance().setVisible(false);
+        this.setVisible(false);
+    }
+    
+    private static boolean isPasswordCorrect(char[] input) {
+        boolean isCorrect = true;
+        char[] correctPassword = { 'y', 'c' };
+
+        if (input.length != correctPassword.length) {
+            isCorrect = false;
+        } 
+        else {
+            isCorrect = Arrays.equals (input, correctPassword);
+        }
+        //Zero out the password.
+        Arrays.fill(correctPassword,'0');
+        return isCorrect;
+    }
+    
     private void validity()
     {
         String username=txt_username.getText();
         char[] p=txt_password.getPassword();
        
-        if(username.equals("yc") && isPasswordCorrect(p)){
-            
-             java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               
-                    final ClientUIMain c = new ClientUIMain();
-                    c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                    
-                    c.lbl_prepaid_amt.setText("00.00");
-                    c.lbl_traffic_amt.setText("00.00");
-                    c.lbl_others_amt.setText("00.00");
-                    c.lbl_total_amt.setText("10.00");
-                    c.lbl_balance.setText("00.00");
-                    
-                    c.lbl_loginId.setText("yc");
-                    c.lbl_name.setText("YelloCafe");
-                    c.lbl_pricing.setText("Employee");
-                    c.lbl_payment.setText("Post-Paid");
-                    
-                    Timer timer=new Timer();
-                    final Time t1=new Time(0,0,0);
-                    timer.schedule(new TimerTask() {
-                    
-                    public void run() {
-                    if(start==1)
-                    {
-                        t1.setTime(t1.getTime());
-                    }
-                    else{
-                  t1.setTime(t1.getTime() + 1000);}
-                    
-                 c.lbl_time.setText(String.valueOf(t1));
-                 if(t1.getMinutes()<10){
-                     c.lbl_time_amt.setText("10.00");
-                     c.lbl_total_amt.setText("10.00");
-                 }
-                 else if(t1.getMinutes()>=10 && t1.getMinutes()<30){
-                     c.lbl_time_amt.setText("20.00");
-                     c.lbl_total_amt.setText("20.00");
-                 }
-                 else{
-                     c.lbl_time_amt.setText("30.00");
-                    c.lbl_total_amt.setText("30.00");
-                 }
-                }
-              }, 0,1000);
-                    
-                    c.setVisible(true); 
-                    
-                    
-                    f.dispose();
-                    f.setVisible(false);
-                    
-            }
-            
-        });
-            this.dispose();
-            //this.setVisible(false);
-            fullpage f1 = ClientUIMain.f;
-           f1.setVisible(false);
-             
+        if(username.equals("yc") && isPasswordCorrect(p))
+        {
+            createSession();
         }
         else
         { 
-           //lbl_nomatch.setText("Sorry, username or password do not matched. Please try again.");
            JOptionPane.showMessageDialog(rootPane,"Invalid username or password.", "YelloCafe", 0);
-           
         }
     }
+    
+    
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
         validity();
-        
-               
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
-        // TODO add your handling code here:
         txt_username.setText(null);
         txt_password.setText(null);
-        //lbl_nomatch.setText(null);
     }//GEN-LAST:event_btn_cancelActionPerformed
 
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
-        // TODO add your handling code here:
         validity();
     }//GEN-LAST:event_txt_passwordActionPerformed
 
@@ -313,28 +254,12 @@ public static int start = 0;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                    f.setVisible(true);
+                    fullpage.getInstance().setVisible(true);
                     
+                    Login l = Login.getInstance();                    
                     l.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                     l.setSize(390,330);
                     l.setVisible(true);
-                    l.addKeyListener(new KeyAdapter() {
-
-                    @Override
-                    public void keyPressed(KeyEvent e) {
-                        e.consume();
-                        
-                    }
-                    
-                    });
-                    try{
-                        Robot rb=new Robot();
-                        rb.keyRelease(KeyEvent.VK_ALT);
-                        rb.keyRelease(KeyEvent.VK_TAB);
-                    }
-                    catch(Exception ex){
-                        
-                    }
               }
         });
     }

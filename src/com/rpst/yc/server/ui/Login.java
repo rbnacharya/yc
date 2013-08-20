@@ -136,8 +136,8 @@ public static int start = 0;
             
              java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                    final Main c = new Main();
-                    c.setVisible(true); 
+                    Main m = Main.getInstance();
+                    m.setVisible(true); 
              }            
         });
             this.dispose();

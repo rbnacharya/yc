@@ -4,8 +4,9 @@
  */
 package com.rpst.yc.server.ui;
 
-import java.awt.BorderLayout;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Details extends javax.swing.JFrame {
      */
     public Details() {
         initComponents();
+        
     }
 
     /**
@@ -29,126 +31,68 @@ public class Details extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txt_compname5 = new javax.swing.JTextField();
-        txt_compname4 = new javax.swing.JTextField();
-        txt_compname3 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txt_compname6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txt_compname7 = new javax.swing.JTextField();
-        txt_compname = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        cbo_terminal = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_writePane = new javax.swing.JTextPane();
+        btn_send = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txt_chatHistory = new javax.swing.JTextPane();
+        btn_chat = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btn_screenCapture = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        btn_stop = new javax.swing.JButton();
+        btn_start = new javax.swing.JButton();
+        btn_cancel = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        txt_compname = new javax.swing.JTextField();
         txt_ipaddress = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_profile = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_macaddr = new javax.swing.JTextField();
+        txt_username = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
-        btn_screenCapture = new javax.swing.JButton();
-        btn_chat = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        btn_cancel = new javax.swing.JButton();
-        txt_compname8 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
 
         setFocusCycleRoot(false);
         setMaximumSize(new java.awt.Dimension(1380, 760));
-        setPreferredSize(new java.awt.Dimension(1200, 740));
+        setPreferredSize(new java.awt.Dimension(1000, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txt_compname5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname5.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname5.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 190, 20));
-
-        txt_compname4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname4.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname4.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 190, 20));
-
-        txt_compname3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname3.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname3.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 190, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Select the Terminal");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
-
-        txt_compname6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname6.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname6.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 190, 20));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setText("Space Available:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
-
-        txt_compname7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname7.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname7.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 190, 20));
-
-        txt_compname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 190, 20));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Internet Access:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("Available Bandwidth:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
-
-        txt_ipaddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_ipaddress.setForeground(new java.awt.Color(0, 102, 102));
-        txt_ipaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_ipaddress.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_ipaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 190, 20));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("IP address:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Processor:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setText("Memory (RAM):");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktop8.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, 110));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 110));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 210, 30));
+        cbo_terminal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cbo_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 170, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("Computer Name: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btn_screenCapture.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btn_screenCapture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/screencapture.png"))); // NOI18N
-        btn_screenCapture.setText("Screen Capture");
-        btn_screenCapture.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        btn_screenCapture.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel6.setText("Chat History");
+
+        jScrollPane1.setViewportView(txt_writePane);
+
+        btn_send.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_send.setText("Send");
+        btn_send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_screenCaptureActionPerformed(evt);
+                btn_sendActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_screenCapture, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 210, 40));
+
+        jScrollPane3.setViewportView(txt_chatHistory);
 
         btn_chat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/chat.jpg"))); // NOI18N
@@ -159,39 +103,104 @@ public class Details extends javax.swing.JFrame {
                 btn_chatActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 160, 40));
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 408, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(btn_chat, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 9, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 9, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btn_chat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel6)
+                .addContainerGap(401, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 71, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10, 10, 10)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 9, Short.MAX_VALUE)))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 410, 470));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 410, 470));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btn_screenCapture.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn_screenCapture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/screencapture.png"))); // NOI18N
+        btn_screenCapture.setText("Screen Capture");
+        btn_screenCapture.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_screenCapture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_screenCaptureActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        btn_stop.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_stop.setForeground(new java.awt.Color(204, 0, 0));
+        btn_stop.setText("Stop");
+
+        btn_start.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_start.setForeground(new java.awt.Color(0, 153, 0));
+        btn_start.setText("Capture");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(btn_start, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(btn_stop, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(btn_screenCapture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(btn_screenCapture, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_start, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_stop, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 7, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, 430, 470));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 510, 470));
 
-        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_cancel.setForeground(new java.awt.Color(255, 0, 0));
         btn_cancel.setText("Cancel");
         btn_cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -199,42 +208,128 @@ public class Details extends javax.swing.JFrame {
                 btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 160, 50));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, 100, 40));
 
-        txt_compname8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_compname8.setForeground(new java.awt.Color(0, 102, 102));
-        txt_compname8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txt_compname8.setName("txt_compname"); // NOI18N
-        getContentPane().add(txt_compname8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 190, 20));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_compname.setEditable(false);
+        txt_compname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_compname.setForeground(new java.awt.Color(0, 102, 102));
+        txt_compname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_compname.setName("txt_compname"); // NOI18N
+        jPanel4.add(txt_compname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 190, 20));
+
+        txt_ipaddress.setEditable(false);
+        txt_ipaddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_ipaddress.setForeground(new java.awt.Color(0, 102, 102));
+        txt_ipaddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_ipaddress.setName("txt_compname"); // NOI18N
+        jPanel4.add(txt_ipaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 190, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Profile");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Computer Name: ");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        txt_profile.setEditable(false);
+        txt_profile.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_profile.setForeground(new java.awt.Color(0, 102, 102));
+        txt_profile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_profile.setName("txt_compname"); // NOI18N
+        jPanel4.add(txt_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 190, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Operating System:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        jLabel5.setText("IP Address");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        txt_macaddr.setEditable(false);
+        txt_macaddr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_macaddr.setForeground(new java.awt.Color(0, 102, 102));
+        txt_macaddr.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_macaddr.setName("txt_compname"); // NOI18N
+        txt_macaddr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_macaddrActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txt_macaddr, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 190, 20));
+
+        txt_username.setEditable(false);
+        txt_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_username.setForeground(new java.awt.Color(0, 102, 102));
+        txt_username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_username.setName("txt_compname"); // NOI18N
+        jPanel4.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 190, 20));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("Username");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setText("MAC Address");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 620, 100));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void chat()
+    {
+        String msg = txt_writePane.getText();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        String dt = (dateFormat.format(date));
+        String chatHistory =txt_chatHistory.getText() + " \n------------------------------------------------------ " + dt + "\nServer:- " + msg ;
+       
+        txt_chatHistory.setText(chatHistory);
+        txt_writePane.setText(null);
+    }
+    private void chatClient(String msg)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        String dt = (dateFormat.format(date));
+        String chatHistory =txt_chatHistory.getText() + " \n------------------------------------------------------ " + dt + "\nServer:- " + msg ;
+       
+        txt_chatHistory.setText(chatHistory);
+        txt_writePane.setText(null);
+    }
+    
+    
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
-        JPanel_Chat chat = new JPanel_Chat();
-        jPanel1.setLayout(new BorderLayout());
-        jPanel1.add(chat);
-        jPanel1.validate();
-        jPanel1.setVisible(true);
+//        JPanel_Chat chat = new JPanel_Chat();
+//        jPanel1.setLayout(new BorderLayout());
+//        jPanel1.add(chat);
+//        jPanel1.validate();
+//        jPanel1.setVisible(true);
         //this.setVisible(true);
     }//GEN-LAST:event_btn_chatActionPerformed
 
     private void btn_screenCaptureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_screenCaptureActionPerformed
-        JPanel_ScreenCapture sc = new JPanel_ScreenCapture();
-        jPanel2.setLayout(new BorderLayout());
-        jPanel2.add(sc);
-        jPanel2.validate();
-        jPanel2.setVisible(true);
+//        JPanel_ScreenCapture sc = new JPanel_ScreenCapture();
+//        jPanel2.setLayout(new BorderLayout());
+//        jPanel2.add(sc);
+//        jPanel2.validate();
+//        jPanel2.setVisible(true);
     }//GEN-LAST:event_btn_screenCaptureActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btn_cancelActionPerformed
+
+    private void txt_macaddrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_macaddrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_macaddrActionPerformed
+
+    private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
+        chat();
+    }//GEN-LAST:event_btn_sendActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,9 +369,11 @@ public class Details extends javax.swing.JFrame {
     private javax.swing.JButton btn_cancel;
     private javax.swing.JButton btn_chat;
     private javax.swing.JButton btn_screenCapture;
+    private javax.swing.JButton btn_send;
+    private javax.swing.JButton btn_start;
+    private javax.swing.JButton btn_stop;
+    private javax.swing.JComboBox cbo_terminal;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -284,16 +381,19 @@ public class Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextPane txt_chatHistory;
     private javax.swing.JTextField txt_compname;
-    private javax.swing.JTextField txt_compname3;
-    private javax.swing.JTextField txt_compname4;
-    private javax.swing.JTextField txt_compname5;
-    private javax.swing.JTextField txt_compname6;
-    private javax.swing.JTextField txt_compname7;
-    private javax.swing.JTextField txt_compname8;
     private javax.swing.JTextField txt_ipaddress;
+    private javax.swing.JTextField txt_macaddr;
+    private javax.swing.JTextField txt_profile;
+    private javax.swing.JTextField txt_username;
+    private javax.swing.JTextPane txt_writePane;
     // End of variables declaration//GEN-END:variables
 }

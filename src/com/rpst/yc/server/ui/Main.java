@@ -105,7 +105,11 @@ public class Main extends javax.swing.JFrame {
         });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_comp2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_comp2.setForeground(new java.awt.Color(255, 255, 255));
         btn_comp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png"))); // NOI18N
+        btn_comp2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_comp2.setLabel("comp2");
         btn_comp2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_comp2ActionPerformed(evt);
@@ -114,7 +118,11 @@ public class Main extends javax.swing.JFrame {
         jPanel2.add(btn_comp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 90, 70));
 
         btn_comp1.setBackground(new java.awt.Color(204, 204, 204));
+        btn_comp1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_comp1.setForeground(new java.awt.Color(255, 255, 255));
         btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopoff.png"))); // NOI18N
+        btn_comp1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_comp1.setLabel("comp1");
         btn_comp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_comp1ActionPerformed(evt);
@@ -364,26 +372,27 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    static Main main_class;
+    public static Main getInstance(){
+        if(main_class==null){
+            main_class=new Main();
+        }
+        return main_class;
+    }
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
         Frm_User usr = new Frm_User();
         usr.setVisible(true);
     }//GEN-LAST:event_btn_usersActionPerformed
 
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
-        // TODO add your handling code here:
         new Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_logoutActionPerformed
 
     private void btn_setupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_setupActionPerformed
-        // TODO add your handling code here:
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                //Setup st=new Setup();
-               //st.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-               //st.setVisible(true);
-            }
-        });
+        Setup st=new Setup();
+        st.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        st.setVisible(true);
     }//GEN-LAST:event_btn_setupActionPerformed
 
     private void btn_comp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comp2ActionPerformed
@@ -415,10 +424,6 @@ public class Main extends javax.swing.JFrame {
         btn_communicate.setEnabled(true);
         btn_start.setEnabled(false);
         btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png")));
-        
-        
-        
-       
     }//GEN-LAST:event_btn_startActionPerformed
 
     private void btn_stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stopActionPerformed
@@ -522,7 +527,7 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Main main=new Main();
+                Main main=Main.getInstance();
                 btn_set_cursor(main);
                  main.setVisible(true);
                 }
@@ -532,7 +537,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btn_about;
     private javax.swing.JButton btn_addtime;
     private javax.swing.JButton btn_communicate;
-    private javax.swing.JButton btn_comp1;
+    public javax.swing.JButton btn_comp1;
     private javax.swing.JButton btn_comp2;
     private javax.swing.JButton btn_logout;
     private javax.swing.JButton btn_setup;
@@ -561,7 +566,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

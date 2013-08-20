@@ -17,9 +17,14 @@ public class fullpage extends javax.swing.JFrame {
      */
     public fullpage() {
         initComponents();
-        this.addKeyListener(new KeyAdapter() {});
+        }
+    static fullpage full;
+    public static fullpage getInstance(){
+        if(full==null){
+            full=new fullpage();
+        }
+        return full;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,9 +106,7 @@ public class fullpage extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
-                    new fullpage().setVisible(true);
-                    
+                    fullpage.getInstance().setVisible(true);
             }
             
         });

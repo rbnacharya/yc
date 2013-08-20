@@ -81,10 +81,17 @@ public class Create_Session extends javax.swing.JFrame {
 
         btn_addnew.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_addnew.setText("Add New ...");
+        btn_addnew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addnewActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_addnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, 30));
 
+        cbo_users.setEditable(true);
         cbo_users.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_users.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Guest", "User1", "User2", "User3" }));
+        cbo_users.setAutoscrolls(true);
         getContentPane().add(cbo_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 280, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -133,12 +140,15 @@ public class Create_Session extends javax.swing.JFrame {
         jButton4.setText("Create");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
+        txt_age.setEditable(false);
         txt_age.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 230, 30));
 
+        txt_fullname.setEditable(false);
         txt_fullname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 30));
 
+        txt_address.setEditable(false);
         txt_address.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 230, 30));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 540, 10));
@@ -163,6 +173,7 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel10.setText("Current Balance");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
+        txt_age1.setEditable(false);
         txt_age1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_age1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 540, 10));
@@ -174,6 +185,11 @@ public class Create_Session extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btn_addnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addnewActionPerformed
+        UserRegistration usr = new UserRegistration();
+        usr.setVisible(true);
+    }//GEN-LAST:event_btn_addnewActionPerformed
 
     /**
      * @param args the command line arguments

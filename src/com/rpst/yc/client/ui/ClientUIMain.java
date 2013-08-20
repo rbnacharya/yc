@@ -232,9 +232,8 @@ public class ClientUIMain extends javax.swing.JFrame {
     
     private void btn_loggoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loggoffActionPerformed
         this.dispose();
-        Login l = new Login();
-        
-        f.setVisible(true);
+        Login l = Login.getInstance();
+        fullpage.getInstance().setVisible(true);
         l.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         l.setSize(390,330);
         l.setVisible(true);

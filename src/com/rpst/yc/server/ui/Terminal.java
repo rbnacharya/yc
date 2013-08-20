@@ -4,6 +4,15 @@
  */
 package com.rpst.yc.server.ui;
 
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.plaf.basic.BasicOptionPaneUI;
+import javax.swing.plaf.basic.DefaultMenuLayout;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 /**
  *
  * @author Pavan Poudel
@@ -136,7 +145,21 @@ public class Terminal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        Main m = Main.getInstance();
+        JButton btn = new JButton();
+        
+        //btn.setSize(70, 60);
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopoff.png")));
+        btn.setHorizontalTextPosition((int) CENTER_ALIGNMENT);
+        btn.setVerticalTextPosition((int) CENTER_ALIGNMENT);
+        btn.setForeground(Color.white);
+        btn.setLabel("CompId");
+        m.jPanel2.setLayout(new FlowLayout((int) LEFT_ALIGNMENT, 20, 20));
+        //m.jPanel2.setLayout(new BasicOptionPaneUI.ButtonAreaLayout(true, 10));
+        //m.jPanel2.setLayout(new GridLayout(1, 1, 30, 30));
+        m.jPanel2.add(btn);
+        m.jPanel2.validate();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

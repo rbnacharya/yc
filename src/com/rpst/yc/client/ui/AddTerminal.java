@@ -2,18 +2,24 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rpst.yc.server.ui;
+package com.rpst.yc.client.ui;
+
+import com.rpst.yc.server.ui.*;
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
  * @author Pavan Poudel
  */
-public class Terminal extends javax.swing.JFrame {
+public class AddTerminal extends javax.swing.JFrame {
 
     /**
      * Creates new form Terminal
      */
-    public Terminal() {
+    public AddTerminal() {
         initComponents();
     }
 
@@ -26,51 +32,45 @@ public class Terminal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txt_macaddr = new javax.swing.JTextField();
+        txt_terminal = new javax.swing.JTextField();
+        txt_compName = new javax.swing.JTextField();
+        txt_username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txt_IPaddress = new javax.swing.JTextField();
+        btn_cancel = new javax.swing.JButton();
+        cbo_profile = new javax.swing.JComboBox();
+        btn_receive = new javax.swing.JButton();
+        btn_add = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setAlwaysOnTop(true);
         setExtendedState(1);
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(455, 500));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 230, 30));
+        txt_macaddr.setEditable(false);
+        txt_macaddr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_macaddr, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 230, 30));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 230, 30));
+        txt_terminal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 230, 30));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 230, 30));
+        txt_compName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_compName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 230, 30));
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 110, 30));
-
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 230, 30));
+        txt_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 230, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("MAC Address");
@@ -78,70 +78,79 @@ public class Terminal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Terminal");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Computer Name");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Profile");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("IP Address");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Port");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Username");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 420, 10));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 420, 10));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 420, 10));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 420, 10));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 420, 10));
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 230, 30));
+        txt_IPaddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_IPaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 230, 30));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_cancel.setText("Cancel");
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 90, 30));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 90, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Profile", "Internet Station", "Game Station" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 230, 30));
+        cbo_profile.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Profile", "Internet Station", "Game Station" }));
+        getContentPane().add(cbo_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 230, 30));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setText("Receive");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 80, 30));
+        btn_receive.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_receive.setText("Receive");
+        getContentPane().add(btn_receive, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 80, 30));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setText("Add");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_add.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_add.setText("Add");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_addActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 90, 30));
+        getContentPane().add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 90, 30));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        Main m = Main.getInstance();
+        JButton btn = new JButton();
+        btn=m.btn_comp1;
+        btn.setSize(133, 79);
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopoff.png")));
+        btn.setHorizontalTextPosition((int) CENTER_ALIGNMENT);
+        btn.setVerticalTextPosition((int) CENTER_ALIGNMENT);
+        btn.setForeground(Color.WHITE);
+        btn.setLabel("CompId");
+        //m.jPanel2.setLayout(new AbsoluteLayout());
+        m.jPanel2.setLayout(new GridLayout(1, 1, 30, 30));
+        m.jPanel2.add(btn);
+        m.jPanel2.validate();
+        
+    }//GEN-LAST:event_btn_addActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_cancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,25 +187,23 @@ public class Terminal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton btn_add;
+    private javax.swing.JButton btn_cancel;
+    private javax.swing.JButton btn_receive;
+    private javax.swing.JComboBox cbo_profile;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txt_IPaddress;
+    private javax.swing.JTextField txt_compName;
+    private javax.swing.JTextField txt_macaddr;
+    private javax.swing.JTextField txt_terminal;
+    private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }
