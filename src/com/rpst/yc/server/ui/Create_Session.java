@@ -40,17 +40,17 @@ public class Create_Session extends javax.swing.JFrame {
         cbo_bandwidth = new javax.swing.JComboBox();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btn_create = new javax.swing.JButton();
         txt_age = new javax.swing.JTextField();
         txt_fullname = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        cbo_client_terminal1 = new javax.swing.JComboBox();
+        cbo_pricing = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
-        cbo_client_terminal2 = new javax.swing.JComboBox();
+        cbo_time = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txt_age1 = new javax.swing.JTextField();
+        txt_currBalance = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
 
         setTitle("Create Sesion");
@@ -136,9 +136,14 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel7.setText("Client Terminal");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Create");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
+        btn_create.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_create.setText("Create");
+        btn_create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
         txt_age.setEditable(false);
         txt_age.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -153,17 +158,17 @@ public class Create_Session extends javax.swing.JFrame {
         getContentPane().add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 230, 30));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 540, 10));
 
-        cbo_client_terminal1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_client_terminal1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Standard", "Employee", "Student" }));
-        getContentPane().add(cbo_client_terminal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 230, 30));
+        cbo_pricing.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbo_pricing.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Standard", "Employee", "Student" }));
+        getContentPane().add(cbo_pricing, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 230, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Pricing");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
-        cbo_client_terminal2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_client_terminal2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Unlimited", "15 Minutes", "30 Minutes", "1 Hour", "2 Hours", "3 Hours" }));
-        getContentPane().add(cbo_client_terminal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 230, 30));
+        cbo_time.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbo_time.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Unlimited", "15 Minutes", "30 Minutes", "1 Hour", "2 Hours", "3 Hours" }));
+        getContentPane().add(cbo_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 230, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Time");
@@ -173,15 +178,21 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel10.setText("Current Balance");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
-        txt_age1.setEditable(false);
-        txt_age1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_age1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
+        txt_currBalance.setEditable(false);
+        txt_currBalance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_currBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 540, 10));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    static int terminal=1;
+   
+    public static JPanel_BusyTerminal[] bg = new JPanel_BusyTerminal[50];
+    public static JPanel_BusyTerminal[] getTerminal()
+    {
+        return bg;
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -190,6 +201,45 @@ public class Create_Session extends javax.swing.JFrame {
         UserRegistration usr = new UserRegistration();
         usr.setVisible(true);
     }//GEN-LAST:event_btn_addnewActionPerformed
+    
+    private String setTrafficCost()
+    {
+        String traffic;
+        if(cbo_bandwidth.getSelectedItem().toString() == "128 Kbps")
+        {
+            traffic = "0";
+        }
+        else if(cbo_bandwidth.getSelectedItem().toString() == "256 Kbps")
+        {
+            traffic = "10";
+        }
+        else if(cbo_bandwidth.getSelectedItem().toString() == "512 Kbps")
+        {
+            traffic = "20";
+        }
+        else
+        {
+            traffic = "40";
+        }
+        return traffic;
+    } 
+    private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
+        bg[terminal] = new JPanel_BusyTerminal();
+        bg[terminal].lbl_prepaid_amt.setText(txt_currBalance.getText());
+        bg[terminal].lbl_time_amt.setText("10 (Min.)");
+        bg[terminal].lbl_traffic_amt.setText(setTrafficCost());
+        bg[terminal].lbl_others_amt.setText("0");
+        bg[terminal].lbl_total_amt.setText("10");
+        bg[terminal].lbl_balance.setText("-10");
+        bg[terminal].lbl_time.setText(cbo_time.getSelectedItem().toString());
+        bg[terminal].jProgressBar1.setMaximum(900);
+        bg[terminal].jProgressBar1.setValue(100);
+        Main.getInstance().panel_bgterminal.removeAll();
+        Main.getInstance().panel_bgterminal.add(bg[terminal]);
+        Main.getInstance().panel_bgterminal.validate();
+        this.setVisible(false);
+        terminal++;
+    }//GEN-LAST:event_btn_createActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,13 +277,13 @@ public class Create_Session extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_addnew;
+    private javax.swing.JButton btn_create;
     private javax.swing.JComboBox cbo_bandwidth;
     private javax.swing.JComboBox cbo_client_terminal;
-    private javax.swing.JComboBox cbo_client_terminal1;
-    private javax.swing.JComboBox cbo_client_terminal2;
+    private javax.swing.JComboBox cbo_pricing;
+    private javax.swing.JComboBox cbo_time;
     private javax.swing.JComboBox cbo_users;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,7 +300,7 @@ public class Create_Session extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_user;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_age;
-    private javax.swing.JTextField txt_age1;
+    private javax.swing.JTextField txt_currBalance;
     private javax.swing.JTextField txt_fullname;
     // End of variables declaration//GEN-END:variables
 }

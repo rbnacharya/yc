@@ -42,6 +42,8 @@ public class JPanel_BusyTerminal extends javax.swing.JPanel {
         jlabel11 = new javax.swing.JLabel();
         jlabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        lbl_time1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -91,7 +93,7 @@ public class JPanel_BusyTerminal extends javax.swing.JPanel {
         lbl_time.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbl_time.setForeground(new java.awt.Color(0, 102, 0));
         lbl_time.setText("Time");
-        add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 140, -1));
+        add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 170, -1));
 
         lbl_balance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_balance.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -106,9 +108,16 @@ public class JPanel_BusyTerminal extends javax.swing.JPanel {
         jlabel12.setText("Balance");
         add(jlabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 220, 10));
+        add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 200, 210, -1));
+
+        lbl_time1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_time1.setForeground(new java.awt.Color(0, 102, 0));
+        lbl_time1.setText("Time:");
+        add(lbl_time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 40, -1));
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel12;
+    protected javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
@@ -121,6 +130,7 @@ public class JPanel_BusyTerminal extends javax.swing.JPanel {
     public javax.swing.JLabel lbl_others_amt;
     public javax.swing.JLabel lbl_prepaid_amt;
     public javax.swing.JLabel lbl_time;
+    public javax.swing.JLabel lbl_time1;
     public javax.swing.JLabel lbl_time_amt;
     public javax.swing.JLabel lbl_total_amt;
     public javax.swing.JLabel lbl_traffic_amt;

@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.imageio.*;
 import javax.swing.ImageIcon;
+import java.util.Arrays;
 
 /*
  * To change this template, choose Tools | Templates
@@ -45,16 +46,6 @@ public class Main extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_comp2 = new javax.swing.JButton();
         btn_comp1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        lbl_busy = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        btn_unpaid = new javax.swing.JButton();
-        lbl_payment = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btn_about = new javax.swing.JButton();
         btn_setup = new javax.swing.JButton();
@@ -73,6 +64,14 @@ public class Main extends javax.swing.JFrame {
         btn_stop = new javax.swing.JButton();
         btn_addtime = new javax.swing.JButton();
         btn_communicate = new javax.swing.JButton();
+        panel_bgterminal = new javax.swing.JPanel();
+        lbl_busy = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lbl_payment = new javax.swing.JLabel();
+        btn_unpaid = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -92,7 +91,6 @@ public class Main extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setLocationByPlatform(true);
         setName("Yello Cafe"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1150, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -140,50 +138,6 @@ public class Main extends javax.swing.JFrame {
         jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 95, 75));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 640, 590));
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lbl_busy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbl_busy.setText("                Click on the busy terminal ...");
-        jPanel4.add(lbl_busy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, -1));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 230));
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null}
-            },
-            new String [] {
-                "Name"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 220));
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 270, 310));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 270, 10));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 270, 10));
-
-        btn_unpaid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btn_unpaid.setText("Unpaid");
-        btn_unpaid.setEnabled(false);
-        jPanel1.add(btn_unpaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 263, 80, 30));
-
-        lbl_payment.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbl_payment.setForeground(new java.awt.Color(255, 0, 0));
-        lbl_payment.setText("Get Payment");
-        lbl_payment.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-        lbl_payment.setEnabled(false);
-        jPanel1.add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 290, 630));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -324,6 +278,41 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(btn_communicate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, -1));
 
+        panel_bgterminal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel_bgterminal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_busy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbl_busy.setText("                Click on the busy terminal ...");
+        panel_bgterminal.add(lbl_busy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, -1));
+
+        getContentPane().add(panel_bgterminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, 230));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 270, 10));
+
+        lbl_payment.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbl_payment.setForeground(new java.awt.Color(255, 0, 0));
+        lbl_payment.setText("Get Payment");
+        lbl_payment.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        lbl_payment.setEnabled(false);
+        getContentPane().add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 280, -1, -1));
+
+        btn_unpaid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_unpaid.setText("Unpaid");
+        btn_unpaid.setEnabled(false);
+        getContentPane().add(btn_unpaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 80, 30));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 310, 270, 10));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "Name"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 270, 320));
+
         jMenuBar1.setBorder(null);
         jMenuBar1.setAutoscrolls(true);
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -405,7 +394,7 @@ public class Main extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1156, 749));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    static int active = 0;
     static Main main_class;
     public static Main getInstance(){
         if(main_class==null){
@@ -413,6 +402,11 @@ public class Main extends javax.swing.JFrame {
         }
         return main_class;
     }
+    
+    int[] comp = new int[50];
+    //comp[1] = 1;
+    
+   
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
         Frm_User usr = new Frm_User();
         usr.setVisible(true);
@@ -436,11 +430,11 @@ public class Main extends javax.swing.JFrame {
         btn_communicate.setEnabled(true);
         btn_start.setEnabled(false);
         
-        jPanel4.removeAll();
-        jPanel4.setLayout(new BorderLayout());
-        jPanel4.add(bt);
-        jPanel4.validate();
-        jPanel4.setVisible(true);
+        panel_bgterminal.removeAll();
+        panel_bgterminal.setLayout(new BorderLayout());
+        panel_bgterminal.add(bt);
+        panel_bgterminal.validate();
+        panel_bgterminal.setVisible(true);
     }//GEN-LAST:event_btn_comp2ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
@@ -448,10 +442,10 @@ public class Main extends javax.swing.JFrame {
         cs.setVisible(true);
         
         JPanel_BusyTerminal bt = new JPanel_BusyTerminal();
-        jPanel4.removeAll();
-        jPanel4.setLayout(new BorderLayout());
-        jPanel4.add(bt);
-        jPanel4.validate();
+        panel_bgterminal.removeAll();
+        panel_bgterminal.setLayout(new BorderLayout());
+        panel_bgterminal.add(bt);
+        panel_bgterminal.validate();
         
         btn_addtime.setEnabled(true);
         btn_stop.setEnabled(true);
@@ -476,18 +470,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_addtimeActionPerformed
 
     private void btn_comp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comp1ActionPerformed
-        int active = 0;
+        
         if(active==0){
             btn_start.setEnabled(true);
             btn_stop.setEnabled(false);
             btn_addtime.setEnabled(false);
             btn_communicate.setEnabled(false);
             active++;
-            
-            jPanel4.removeAll();
-            jPanel4.setLayout(new BorderLayout());
-            jPanel4.add(lbl_busy);
-            jPanel4.validate();
         }
         else
         {
@@ -495,10 +484,10 @@ public class Main extends javax.swing.JFrame {
             btn_stop.setEnabled(true);
             btn_addtime.setEnabled(true);
             btn_communicate.setEnabled(true);
-            jPanel4.removeAll();
-            jPanel4.setLayout(new BorderLayout());
-            jPanel4.add(lbl_busy);
-            jPanel4.validate();
+            JPanel_BusyTerminal t = Create_Session.getTerminal()[1];
+            this.panel_bgterminal.removeAll();
+            this.panel_bgterminal.add(t);
+            this.panel_bgterminal.validate();
         }
         
     }//GEN-LAST:event_btn_comp1ActionPerformed
@@ -514,11 +503,11 @@ public class Main extends javax.swing.JFrame {
         btn_addtime.setEnabled(false);
         btn_communicate.setEnabled(false);
         
-        jPanel4.removeAll();
-        jPanel4.setLayout(new BorderLayout());
-        jPanel4.add(lbl_busy);
-        jPanel4.validate();
-        jPanel4.setVisible(true);
+        panel_bgterminal.removeAll();
+        panel_bgterminal.setLayout(new BorderLayout());
+        panel_bgterminal.add(lbl_busy);
+        panel_bgterminal.validate();
+        panel_bgterminal.setVisible(true);
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void menu_terminalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_terminalActionPerformed
@@ -622,11 +611,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -636,5 +622,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_payment;
     private javax.swing.JMenu menu_terminal;
     private javax.swing.JMenu menu_users;
+    protected javax.swing.JPanel panel_bgterminal;
     // End of variables declaration//GEN-END:variables
 }

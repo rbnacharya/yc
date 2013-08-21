@@ -175,6 +175,7 @@ public class Payment extends javax.swing.JFrame {
 
     private void btn_paidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_paidActionPerformed
         this.setVisible(false);
+        
     }//GEN-LAST:event_btn_paidActionPerformed
 
     /**
