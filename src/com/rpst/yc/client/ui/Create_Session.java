@@ -9,7 +9,7 @@ import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JFrame;
-import sun.io.Converters;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -183,7 +183,8 @@ public class Create_Session extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    public static int start = 0;    
+    public static int start = 0;
+    public static int n=0;
     public void exitSession()
     {
         //fullpage.getInstance().setVisible(true);
@@ -224,24 +225,67 @@ public class Create_Session extends javax.swing.JFrame {
         cl.lbl_others_amt.setText("0");
         cl.lbl_traffic_amt.setText(setTrafficCost());
         
-//        cl.setVisible(true);
-//        this.setVisible(false);
+        
     }
-//    private int total()
-//    {
-//        ClientUIMain cl = new ClientUIMain();
-//        int tot;
-//        //tot = (cl.lbl_time_amt.getText())
-//        return tot;
-//    }
+    private void total(ClientUIMain cl)
+    {
+        float time, traffic, other, tot, bal;
+        time = Float.parseFloat(cl.lbl_time_amt.getText());
+        traffic = Float.parseFloat(cl.lbl_traffic_amt.getText());
+        other = Float.parseFloat(cl.lbl_others_amt.getText());
+        tot = time + traffic + other;
+        bal = Float.parseFloat(cl.lbl_prepaid_amt.getText()) - tot;
+        
+        cl.lbl_total_amt.setText(String.valueOf(tot));
+        cl.lbl_balance.setText(String.valueOf(bal));
+    }
+    //progressbar
+    private void setProgress(ClientUIMain cl)
+    {
+        if(cbo_time.getSelectedItem().toString() == "Unlimited")
+        {
+            cl.TimeProgressBar.setMaximum(0);
+        }
+        else if(cbo_time.getSelectedItem().toString() == "15 Minutes")
+        {
+            cl.TimeProgressBar.setMaximum(900);
+        }
+        else if(cbo_time.getSelectedItem().toString() == "30 Minutes")
+        {
+            cl.TimeProgressBar.setMaximum(1800);
+        }
+        else if(cbo_time.getSelectedItem().toString() == "1 Hour")
+        {
+            cl.TimeProgressBar.setMaximum(3600);
+        }
+        else if(cbo_time.getSelectedItem().toString() == "2 Hours")
+        {
+            cl.TimeProgressBar.setMaximum(7200);
+        }
+        else
+        {
+            cl.TimeProgressBar.setMaximum(10800);
+        }
+    }
+    private void progress(ClientUIMain cl, int i)
+    {
+        cl.TimeProgressBar.setValue(i);
+            if(cl.TimeProgressBar.getMaximum()-i==300)
+            {
+                JOptionPane.showMessageDialog(rootPane,"Your Session will exit after 5 minutes.\nSave your work.");
+            }
+    }
+    
     public void start()
     {
-        final ClientUIMain c = new ClientUIMain();
+        final ClientUIMain c = ClientUIMain.getInstance();
         c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        CreateSession(c);
+        setProgress(c);
                            
         Timer timer=new Timer();
         final Time t1=new Time(0,0,0);
-        timer.schedule(new TimerTask() {                    
+        timer.schedule(new TimerTask() { 
         public void run() {
              if(start==1)
              {
@@ -250,25 +294,28 @@ public class Create_Session extends javax.swing.JFrame {
              else
              {
                  t1.setTime(t1.getTime() + 1000);
+                 n++;
              }
                   
              c.lbl_timer.setText(String.valueOf(t1));
+             progress(c, n);
              if(t1.getMinutes()<10){
                 c.lbl_time_amt.setText("10");
-                c.lbl_total_amt.setText("10");
+                total(c);
              }
              else if(t1.getMinutes()>=10 && t1.getMinutes()<30){
                  c.lbl_time_amt.setText("20");
-                 c.lbl_total_amt.setText("20");
+                 c.lbl_minimum.setVisible(false);
+                 total(c);
              }
              else{
                   c.lbl_time_amt.setText("30");
-                  c.lbl_total_amt.setText("30");
+                  c.lbl_minimum.setVisible(false);
+                  total(c);
              }
            }
          }, 0,1000);
-                    
-         CreateSession(c);
+        
          c.setVisible(true);
          fullpage.getInstance().setVisible(false);
          this.setVisible(false);

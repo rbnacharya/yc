@@ -4,6 +4,8 @@
  */
 package com.rpst.yc.client.ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pavan Poudel
@@ -27,7 +29,7 @@ public class AddTime extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
+        AddTimeProgbar = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         spin_addtime = new javax.swing.JSpinner();
@@ -56,8 +58,8 @@ public class AddTime extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jProgressBar1.setStringPainted(true);
-        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
+        AddTimeProgbar.setStringPainted(true);
+        getContentPane().add(AddTimeProgbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Pre-paid:");
@@ -66,6 +68,11 @@ public class AddTime extends javax.swing.JFrame {
 
         spin_addtime.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         spin_addtime.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(5)));
+        spin_addtime.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spin_addtimeStateChanged(evt);
+            }
+        });
         getContentPane().add(spin_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 90, -1));
 
         lbl_user.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -140,6 +147,11 @@ public class AddTime extends javax.swing.JFrame {
 
         btn_ok.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_ok.setText("Ok");
+        btn_ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_okActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 90, 30));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, 370, 10));
 
@@ -155,6 +167,21 @@ public class AddTime extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void addTime(String usr, String bal, String prepaid, String time, int n, int max)
+    {
+        lbl_user.setText(usr);
+        lbl_currBalance.setText(bal);
+        lbl_time.setText(time);
+        lbl_prepaid.setText(prepaid);
+        AddTimeProgbar.setMaximum(max);
+        AddTimeProgbar.setValue(n);
+    }
+    private void ok(ClientUIMain cl)
+    {
+        cl.lbl_time.setText(lbl_time.getText());
+        cl.TimeProgressBar.setMaximum(AddTimeProgbar.getMaximum());
+        cl.TimeProgressBar.setValue(cl.TimeProgressBar.getValue());
+    }
     private void btn_tenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tenActionPerformed
         spin_addtime.setValue(10);
     }//GEN-LAST:event_btn_tenActionPerformed
@@ -174,6 +201,16 @@ public class AddTime extends javax.swing.JFrame {
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btn_cancelActionPerformed
+
+    private void spin_addtimeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spin_addtimeStateChanged
+        lbl_time.setText(lbl_time.getText()+ " + " + spin_addtime.getValue() + " Minutes");
+        AddTimeProgbar.setMaximum(AddTimeProgbar.getMaximum() + (Integer.parseInt(spin_addtime.getValue().toString()) * 60));
+    }//GEN-LAST:event_spin_addtimeStateChanged
+
+    private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
+        ok(ClientUIMain.getInstance());
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_okActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +247,7 @@ public class AddTime extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar AddTimeProgbar;
     private javax.swing.JButton btn_cancel;
     private javax.swing.JButton btn_ok;
     private javax.swing.JButton btn_sixty;
@@ -220,7 +258,6 @@ public class AddTime extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

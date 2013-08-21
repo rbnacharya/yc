@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
         {
             cs.lbl_user.setText("YC");
             cs.txt_fullname.setText("Guest");
-            cs.txt_balance.setText("0.00");
+            cs.txt_balance.setText("0");
         }
         //else retrieve from database
         else

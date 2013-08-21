@@ -40,7 +40,6 @@ public class fullpage extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(0, 51, 255));
-        setEnabled(false);
         setForeground(java.awt.Color.blue);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setModalExclusionType(null);
@@ -49,7 +48,6 @@ public class fullpage extends javax.swing.JFrame {
         setType(java.awt.Window.Type.POPUP);
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel1.setEnabled(false);
         jPanel1.setMinimumSize(new java.awt.Dimension(1380, 760));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

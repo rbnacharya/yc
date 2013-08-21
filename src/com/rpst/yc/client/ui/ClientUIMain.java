@@ -23,6 +23,13 @@ public class ClientUIMain extends javax.swing.JFrame {
         initComponents();
     }
 
+    static ClientUIMain main;
+    public static ClientUIMain getInstance(){
+        if(main==null){
+            main=new ClientUIMain();
+        }
+        return main;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,10 +68,11 @@ public class ClientUIMain extends javax.swing.JFrame {
         lbl_balance = new javax.swing.JLabel();
         jlabel11 = new javax.swing.JLabel();
         jlabel12 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        TimeProgressBar = new javax.swing.JProgressBar();
         lbl_time = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        lbl_minimum = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("YelloCafe");
@@ -209,19 +217,23 @@ public class ClientUIMain extends javax.swing.JFrame {
         jlabel12.setText("Balance");
         getContentPane().add(jlabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 80, -1));
 
-        jProgressBar1.setStringPainted(true);
-        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 240, 20));
+        TimeProgressBar.setStringPainted(true);
+        getContentPane().add(TimeProgressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 240, 20));
 
         lbl_time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lbl_time.setText("Unlimited");
-        getContentPane().add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 70, -1));
+        getContentPane().add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 220, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Time : ");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 40, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 40, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 10, 270));
+
+        lbl_minimum.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_minimum.setText("(Min.)");
+        getContentPane().add(lbl_minimum, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
 
         getAccessibleContext().setAccessibleParent(this);
 
@@ -252,6 +264,7 @@ public class ClientUIMain extends javax.swing.JFrame {
 
     private void btn_addTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTimeActionPerformed
         AddTime adt = new AddTime();
+        adt.addTime(lbl_loginId.getText(), lbl_balance.getText(), lbl_prepaid_amt.getText(), lbl_time.getText(), TimeProgressBar.getValue(), TimeProgressBar.getMaximum());
         adt.lbl_user.setText("User: " + this.lbl_loginId.getText());
         adt.setVisible(true);
     }//GEN-LAST:event_btn_addTimeActionPerformed
@@ -284,7 +297,7 @@ public static int start = 0;
         //</editor-fold>
 
         /* Create and display the form */
-                final ClientUIMain m = new ClientUIMain();
+                final ClientUIMain m = ClientUIMain.getInstance();
                 m.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 Timer timer=new Timer();
                 final Time t1=new Time(0,0,0);
@@ -305,6 +318,7 @@ public static int start = 0;
               m.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JProgressBar TimeProgressBar;
     private javax.swing.JButton btn_addTime;
     private javax.swing.JButton btn_chat;
     private javax.swing.JButton btn_loggoff;
@@ -315,7 +329,6 @@ public static int start = 0;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
@@ -327,6 +340,7 @@ public static int start = 0;
     private javax.swing.JLabel jlabel9;
     public javax.swing.JLabel lbl_balance;
     public javax.swing.JLabel lbl_loginId;
+    protected javax.swing.JLabel lbl_minimum;
     public javax.swing.JLabel lbl_name;
     public javax.swing.JLabel lbl_others_amt;
     public javax.swing.JLabel lbl_payment;
