@@ -76,8 +76,8 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
+        menu_terminal = new javax.swing.JMenu();
+        menu_users = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -110,25 +110,34 @@ public class Main extends javax.swing.JFrame {
         btn_comp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png"))); // NOI18N
         btn_comp2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_comp2.setLabel("comp2");
+        btn_comp2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_comp2.setMaximumSize(new java.awt.Dimension(95, 75));
+        btn_comp2.setMinimumSize(new java.awt.Dimension(95, 75));
+        btn_comp2.setPreferredSize(new java.awt.Dimension(95, 75));
         btn_comp2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_comp2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_comp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 90, 70));
+        jPanel2.add(btn_comp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 95, 75));
 
         btn_comp1.setBackground(new java.awt.Color(204, 204, 204));
         btn_comp1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_comp1.setForeground(new java.awt.Color(255, 255, 255));
         btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopoff.png"))); // NOI18N
+        btn_comp1.setToolTipText("Computer 1");
         btn_comp1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_comp1.setLabel("comp1");
+        btn_comp1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_comp1.setMaximumSize(new java.awt.Dimension(95, 75));
+        btn_comp1.setMinimumSize(new java.awt.Dimension(95, 75));
+        btn_comp1.setPreferredSize(new java.awt.Dimension(95, 75));
         btn_comp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_comp1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 70));
+        jPanel2.add(btn_comp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 95, 75));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 640, 590));
 
@@ -194,6 +203,11 @@ public class Main extends javax.swing.JFrame {
 
         btn_statistics.setBackground(new java.awt.Color(153, 153, 255));
         btn_statistics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/statistics.jpg"))); // NOI18N
+        btn_statistics.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_statisticsActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_statistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 80, 70));
 
         btn_users.setBackground(new java.awt.Color(153, 153, 255));
@@ -212,6 +226,11 @@ public class Main extends javax.swing.JFrame {
 
         btn_timecode.setBackground(new java.awt.Color(153, 153, 255));
         btn_timecode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/timecode.jpg"))); // NOI18N
+        btn_timecode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_timecodeActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_timecode, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 80, 70));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -318,15 +337,30 @@ public class Main extends javax.swing.JFrame {
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenu2.setPreferredSize(new java.awt.Dimension(70, 20));
 
-        jMenu7.setText("Terminals");
-        jMenu7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu7.setPreferredSize(new java.awt.Dimension(100, 20));
-        jMenu2.add(jMenu7);
+        menu_terminal.setText("Terminals");
+        menu_terminal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_terminal.setPreferredSize(new java.awt.Dimension(100, 20));
+        menu_terminal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_terminalMouseClicked(evt);
+            }
+        });
+        menu_terminal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_terminalActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menu_terminal);
 
-        jMenu8.setText("Users");
-        jMenu8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu8.setPreferredSize(new java.awt.Dimension(100, 20));
-        jMenu2.add(jMenu8);
+        menu_users.setText("Users");
+        menu_users.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_users.setPreferredSize(new java.awt.Dimension(100, 20));
+        menu_users.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_usersMouseClicked(evt);
+            }
+        });
+        jMenu2.add(menu_users);
 
         jMenu9.setText("Cost");
         jMenu9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -486,6 +520,31 @@ public class Main extends javax.swing.JFrame {
         jPanel4.validate();
         jPanel4.setVisible(true);
     }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void menu_terminalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_terminalActionPerformed
+        Terminal  ter = new Terminal();
+        ter.setVisible(true);
+    }//GEN-LAST:event_menu_terminalActionPerformed
+
+    private void btn_timecodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timecodeActionPerformed
+        TimeCode tc = new TimeCode();
+        tc.setVisible(true);
+    }//GEN-LAST:event_btn_timecodeActionPerformed
+
+    private void btn_statisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_statisticsActionPerformed
+        Statistics st = new Statistics();
+        st.setVisible(true);
+    }//GEN-LAST:event_btn_statisticsActionPerformed
+
+    private void menu_terminalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_terminalMouseClicked
+        TimeCode tc = new TimeCode();
+        tc.setVisible(true);
+    }//GEN-LAST:event_menu_terminalMouseClicked
+
+    private void menu_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_usersMouseClicked
+        Frm_User usr = new Frm_User();
+        usr.setVisible(true);
+    }//GEN-LAST:event_menu_usersMouseClicked
 //cursor setting method
     public static void btn_set_cursor(Main main) {
         main.btn_about.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -561,8 +620,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -577,5 +634,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_busy;
     private javax.swing.JLabel lbl_payment;
+    private javax.swing.JMenu menu_terminal;
+    private javax.swing.JMenu menu_users;
     // End of variables declaration//GEN-END:variables
 }

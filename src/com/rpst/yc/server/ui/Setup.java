@@ -134,6 +134,7 @@ public class Setup extends javax.swing.JFrame {
     private void btn_addNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addNewActionPerformed
         Terminal  ter = new Terminal();
         ter.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_addNewActionPerformed
 
     private void btn_delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delete1ActionPerformed
@@ -170,13 +171,8 @@ public class Setup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //JPanel_Detail detail=new JPanel_Detail();
                 Setup st=new Setup();
-               //st.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-               //st.jPanel1.setLayout(new java.awt.BorderLayout());
-               //st.jPanel1.add(detail);
-               st.validate();
-               st.setVisible(true);
+                st.setVisible(true);
             }
         });
     }

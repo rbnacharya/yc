@@ -102,6 +102,17 @@ public class Frm_Chat extends javax.swing.JFrame {
         txt_writePane.setText(null);
     }
     
+    private void chatServer(String msg)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        String dt = (dateFormat.format(date));
+        String chatHistory =txt_chatHistory.getText() + " \n------------------------------------------------------ " + dt + "\nYC:- " + msg ;
+       
+        txt_chatHistory.setText(chatHistory);
+        txt_writePane.setText(null);
+    }
+    
     private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
         chat();
     }//GEN-LAST:event_btn_sendActionPerformed

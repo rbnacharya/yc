@@ -66,6 +66,7 @@ public class Frm_User extends javax.swing.JFrame {
             }
         });
         jTable1.setCellSelectionEnabled(true);
+        jTable1.setRowHeight(20);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
