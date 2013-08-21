@@ -41,26 +41,26 @@ public class Frm_changePassword extends javax.swing.JFrame {
         setTitle("Change Password");
         setAlwaysOnTop(true);
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(440, 360));
+        setPreferredSize(new java.awt.Dimension(380, 320));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel1.setText("Username");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("Current Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText("New Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setText("Confirm Password");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         txt_username.setEditable(false);
         txt_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -69,17 +69,17 @@ public class Frm_changePassword extends javax.swing.JFrame {
                 txt_usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 220, 30));
+        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, 30));
 
         txt_confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 220, 30));
+        getContentPane().add(txt_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 220, 30));
 
         txt_currPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_currPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 220, 30));
+        getContentPane().add(txt_currPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 220, 30));
 
         txt_newPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 220, 30));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 410, 10));
+        getContentPane().add(txt_newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 220, 30));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 350, 10));
 
         btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_cancel.setText("Cancel");
@@ -88,11 +88,11 @@ public class Frm_changePassword extends javax.swing.JFrame {
                 btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 90, 40));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 90, 30));
 
         btn_ok.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_ok.setText("Ok");
-        getContentPane().add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, 40));
+        getContentPane().add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 90, 30));
 
         pack();
         setLocationRelativeTo(null);

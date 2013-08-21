@@ -4,12 +4,12 @@
  */
 package com.rpst.yc.client.ui;
 
-import static com.rpst.yc.client.ui.Login.start;
-import com.rpst.yc.server.ui.*;
+//import static com.rpst.yc.client.ui.Login.start;
 import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JFrame;
+import sun.io.Converters;
 
 /**
  *
@@ -49,16 +49,19 @@ public class Create_Session extends javax.swing.JFrame {
         txt_fullname = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        cbo_client_terminal1 = new javax.swing.JComboBox();
+        cbo_pricing = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
-        cbo_client_terminal2 = new javax.swing.JComboBox();
+        cbo_time = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txt_age1 = new javax.swing.JTextField();
+        txt_balance = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
+        cbo_payment = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
 
         setTitle("Create Sesion");
         setAlwaysOnTop(true);
+        setMinimumSize(new java.awt.Dimension(580, 600));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,37 +79,37 @@ public class Create_Session extends javax.swing.JFrame {
             .addGap(0, 140, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 140));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, 140));
 
         lbl_user.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbl_user.setText("Login Id ");
-        getContentPane().add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
+        getContentPane().add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Select Bandwidth");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Fullname");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Address");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Age");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 540, 10));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 540, 10));
 
         cbo_client_terminal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_client_terminal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PC1", "PC2", "PC3", "PC4" }));
         cbo_client_terminal.setEnabled(false);
-        getContentPane().add(cbo_client_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 230, 30));
+        getContentPane().add(cbo_client_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 230, 30));
 
         cbo_bandwidth.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_bandwidth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "128 Kbps", "256 Kbps", "512 Kbps", "1 Mbps", " " }));
-        getContentPane().add(cbo_bandwidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 230, 30));
+        getContentPane().add(cbo_bandwidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 230, 30));
 
         btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_cancel.setText("Cancel");
@@ -115,11 +118,11 @@ public class Create_Session extends javax.swing.JFrame {
                 btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 100, 30));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 520, 100, 30));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Client Terminal");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
 
         btn_create.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_create.setText("Create");
@@ -128,79 +131,114 @@ public class Create_Session extends javax.swing.JFrame {
                 btn_createActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
+        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 100, 30));
 
         txt_age.setEditable(false);
         txt_age.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 230, 30));
+        getContentPane().add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 230, 30));
 
         txt_fullname.setEditable(false);
         txt_fullname.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 30));
+        getContentPane().add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 230, 30));
 
         txt_address.setEditable(false);
         txt_address.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 230, 30));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 540, 10));
+        getContentPane().add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 230, 30));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 540, 10));
 
-        cbo_client_terminal1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_client_terminal1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Standard", "Employee", "Student" }));
-        cbo_client_terminal1.setEnabled(false);
-        getContentPane().add(cbo_client_terminal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 230, 30));
+        cbo_pricing.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbo_pricing.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Standard", "Employee", "Student" }));
+        cbo_pricing.setEnabled(false);
+        getContentPane().add(cbo_pricing, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 230, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Pricing");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
-        cbo_client_terminal2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_client_terminal2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Unlimited", "15 Minutes", "30 Minutes", "1 Hour", "2 Hours", "3 Hours" }));
-        getContentPane().add(cbo_client_terminal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 230, 30));
+        cbo_time.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbo_time.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Unlimited", "15 Minutes", "30 Minutes", "1 Hour", "2 Hours", "3 Hours" }));
+        getContentPane().add(cbo_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 230, 30));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel9.setText("Time");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Payment");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Current Balance");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
-        txt_age1.setEditable(false);
-        txt_age1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txt_age1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 540, 10));
+        txt_balance.setEditable(false);
+        txt_balance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 230, 30));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 540, 10));
+
+        cbo_payment.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbo_payment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pre-paid", "Post-paid" }));
+        getContentPane().add(cbo_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 230, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("Time");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    public static int start = 0;    
     public void exitSession()
     {
         //fullpage.getInstance().setVisible(true);
         Login.getInstance().setVisible(true);
         this.setVisible(false);
     }
-    public void CreateSession()
+    //traffic cost setup
+    private String setTrafficCost()
     {
-        ClientUIMain cl = new ClientUIMain();
-        cl.setVisible(true);
-        this.setVisible(false);
+        String traffic;
+        if(cbo_bandwidth.getSelectedItem().toString() == "128 Kbps")
+        {
+            traffic = "0";
+        }
+        else if(cbo_bandwidth.getSelectedItem().toString() == "256 Kbps")
+        {
+            traffic = "10";
+        }
+        else if(cbo_bandwidth.getSelectedItem().toString() == "512 Kbps")
+        {
+            traffic = "20";
+        }
+        else
+        {
+            traffic = "40";
+        }
+        return traffic;
     }
+    
+    public void CreateSession(ClientUIMain cl)
+    {
+        cl.lbl_loginId.setText(lbl_user.getText());
+        cl.lbl_name.setText(txt_fullname.getText());
+        cl.lbl_pricing.setText(cbo_pricing.getSelectedItem().toString());
+        cl.lbl_payment.setText(cbo_payment.getSelectedItem().toString());
+        cl.lbl_time.setText(cbo_time.getSelectedItem().toString());
+        cl.lbl_prepaid_amt.setText(txt_balance.getText());
+        cl.lbl_others_amt.setText("0");
+        cl.lbl_traffic_amt.setText(setTrafficCost());
+        
+//        cl.setVisible(true);
+//        this.setVisible(false);
+    }
+//    private int total()
+//    {
+//        ClientUIMain cl = new ClientUIMain();
+//        int tot;
+//        //tot = (cl.lbl_time_amt.getText())
+//        return tot;
+//    }
     public void start()
     {
         final ClientUIMain c = new ClientUIMain();
         c.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                  
-        c.lbl_prepaid_amt.setText("00.00");
-        c.lbl_traffic_amt.setText("00.00");
-        c.lbl_others_amt.setText("00.00");
-        c.lbl_total_amt.setText("10.00");
-        c.lbl_balance.setText("00.00");
-                   
-        c.lbl_loginId.setText("yc");
-        c.lbl_name.setText("YelloCafe");
-        c.lbl_pricing.setText("Employee");
-        c.lbl_payment.setText("Post-Paid");
-                    
+                           
         Timer timer=new Timer();
         final Time t1=new Time(0,0,0);
         timer.schedule(new TimerTask() {                    
@@ -214,22 +252,23 @@ public class Create_Session extends javax.swing.JFrame {
                  t1.setTime(t1.getTime() + 1000);
              }
                   
-             c.lbl_time.setText(String.valueOf(t1));
+             c.lbl_timer.setText(String.valueOf(t1));
              if(t1.getMinutes()<10){
-                c.lbl_time_amt.setText("10.00");
-                c.lbl_total_amt.setText("10.00");
+                c.lbl_time_amt.setText("10");
+                c.lbl_total_amt.setText("10");
              }
              else if(t1.getMinutes()>=10 && t1.getMinutes()<30){
-                 c.lbl_time_amt.setText("20.00");
-                 c.lbl_total_amt.setText("20.00");
+                 c.lbl_time_amt.setText("20");
+                 c.lbl_total_amt.setText("20");
              }
              else{
-                  c.lbl_time_amt.setText("30.00");
-                  c.lbl_total_amt.setText("30.00");
+                  c.lbl_time_amt.setText("30");
+                  c.lbl_total_amt.setText("30");
              }
            }
          }, 0,1000);
                     
+         CreateSession(c);
          c.setVisible(true);
          fullpage.getInstance().setVisible(false);
          this.setVisible(false);
@@ -279,11 +318,13 @@ public class Create_Session extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancel;
     private javax.swing.JButton btn_create;
-    private javax.swing.JComboBox cbo_bandwidth;
-    private javax.swing.JComboBox cbo_client_terminal;
-    private javax.swing.JComboBox cbo_client_terminal1;
-    private javax.swing.JComboBox cbo_client_terminal2;
+    protected javax.swing.JComboBox cbo_bandwidth;
+    protected javax.swing.JComboBox cbo_client_terminal;
+    protected javax.swing.JComboBox cbo_payment;
+    protected javax.swing.JComboBox cbo_pricing;
+    protected javax.swing.JComboBox cbo_time;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -291,14 +332,14 @@ public class Create_Session extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    protected javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JLabel lbl_user;
-    private javax.swing.JTextField txt_address;
-    private javax.swing.JTextField txt_age;
-    private javax.swing.JTextField txt_age1;
-    private javax.swing.JTextField txt_fullname;
+    protected javax.swing.JLabel lbl_user;
+    protected javax.swing.JTextField txt_address;
+    protected javax.swing.JTextField txt_age;
+    protected javax.swing.JTextField txt_balance;
+    protected javax.swing.JTextField txt_fullname;
     // End of variables declaration//GEN-END:variables
 }

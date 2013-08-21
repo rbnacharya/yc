@@ -57,21 +57,22 @@ public class ClientUIMain extends javax.swing.JFrame {
         lbl_time_amt = new javax.swing.JLabel();
         lbl_traffic_amt = new javax.swing.JLabel();
         jlabel9 = new javax.swing.JLabel();
-        lbl_time = new javax.swing.JLabel();
+        lbl_timer = new javax.swing.JLabel();
         lbl_balance = new javax.swing.JLabel();
         jlabel11 = new javax.swing.JLabel();
         jlabel12 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
-        lbl_time1 = new javax.swing.JLabel();
+        lbl_time = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("YelloCafe");
         setForeground(java.awt.Color.blue);
+        setIconImage(getIconImage());
         setLocationByPlatform(true);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setPreferredSize(new java.awt.Dimension(430, 550));
+        setPreferredSize(new java.awt.Dimension(470, 570));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,7 +96,7 @@ public class ClientUIMain extends javax.swing.JFrame {
         lbl_others_amt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_others_amt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_others_amt.setText("-- amount --");
-        getContentPane().add(lbl_others_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 90, -1));
+        getContentPane().add(lbl_others_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 90, -1));
 
         lbl_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_name.setText("-- name --");
@@ -116,7 +117,7 @@ public class ClientUIMain extends javax.swing.JFrame {
                 btn_loggoffActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_loggoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 90, 30));
+        getContentPane().add(btn_loggoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 90, 30));
 
         btn_addTime.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_addTime.setText("Add Time");
@@ -146,81 +147,81 @@ public class ClientUIMain extends javax.swing.JFrame {
         getContentPane().add(btn_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 30));
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(0, 5));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 400, 10));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 440, 10));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Payment :");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 260, 10));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 270, 10));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Pre-paid :");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 90, -1));
 
         lbl_prepaid_amt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_prepaid_amt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_prepaid_amt.setText("-- amount --");
-        getContentPane().add(lbl_prepaid_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 100, -1));
+        getContentPane().add(lbl_prepaid_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 100, -1));
 
         jlabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel7.setText("Time :");
-        getContentPane().add(jlabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 70, -1));
+        getContentPane().add(jlabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 70, -1));
 
         jlabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel6.setText("Traffic :");
-        getContentPane().add(jlabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 70, -1));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 260, 10));
+        getContentPane().add(jlabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 70, -1));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 270, 10));
 
         lbl_total_amt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_total_amt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_total_amt.setText("-- amount --");
-        getContentPane().add(lbl_total_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 90, -1));
+        getContentPane().add(lbl_total_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 90, -1));
 
         lbl_time_amt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_time_amt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_time_amt.setText("-- amount --");
-        getContentPane().add(lbl_time_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 90, -1));
+        getContentPane().add(lbl_time_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 90, -1));
 
         lbl_traffic_amt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_traffic_amt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_traffic_amt.setText("-- amount --");
-        getContentPane().add(lbl_traffic_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 90, -1));
+        getContentPane().add(lbl_traffic_amt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 90, -1));
 
         jlabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel9.setText("Others :");
-        getContentPane().add(jlabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 80, -1));
+        getContentPane().add(jlabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 80, -1));
 
-        lbl_time.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbl_time.setForeground(new java.awt.Color(0, 102, 0));
-        lbl_time.setText("Balance");
-        getContentPane().add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 80, -1));
+        lbl_timer.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_timer.setForeground(new java.awt.Color(0, 102, 0));
+        lbl_timer.setText("00:00:00");
+        getContentPane().add(lbl_timer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 80, -1));
 
         lbl_balance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_balance.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_balance.setText("-- amount --");
-        getContentPane().add(lbl_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 90, -1));
+        getContentPane().add(lbl_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 90, -1));
 
         jlabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel11.setText("Total");
-        getContentPane().add(jlabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 80, -1));
+        getContentPane().add(jlabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 80, -1));
 
         jlabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel12.setText("Balance");
-        getContentPane().add(jlabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 80, -1));
+        getContentPane().add(jlabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 80, -1));
 
         jProgressBar1.setStringPainted(true);
-        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 220, 20));
+        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 240, 20));
 
-        lbl_time1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lbl_time1.setText("Unlimited");
-        getContentPane().add(lbl_time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 70, -1));
+        lbl_time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbl_time.setText("Unlimited");
+        getContentPane().add(lbl_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 70, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Time : ");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 40, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 40, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 10, 250));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 10, 270));
 
         getAccessibleContext().setAccessibleParent(this);
 
@@ -297,7 +298,7 @@ public static int start = 0;
                     else{
                     t1.setTime(t1.getTime() + 1000);}
                     
-                    m.lbl_time.setText(String.valueOf(t1));
+                    m.lbl_timer.setText(String.valueOf(t1));
                     m.lbl_time_amt.setText("10.00 ");
                 }
               }, 0,1000);
@@ -331,9 +332,9 @@ public static int start = 0;
     public javax.swing.JLabel lbl_payment;
     public javax.swing.JLabel lbl_prepaid_amt;
     public javax.swing.JLabel lbl_pricing;
-    public javax.swing.JLabel lbl_time;
-    private javax.swing.JLabel lbl_time1;
+    protected javax.swing.JLabel lbl_time;
     public javax.swing.JLabel lbl_time_amt;
+    public javax.swing.JLabel lbl_timer;
     public javax.swing.JLabel lbl_total_amt;
     public javax.swing.JLabel lbl_traffic_amt;
     // End of variables declaration//GEN-END:variables

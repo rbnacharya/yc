@@ -1,10 +1,7 @@
 package com.rpst.yc.client.ui;
 
-import java.sql.Time;
 import javax.swing.JFrame;
 import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.JOptionPane;
         
 
@@ -25,7 +22,6 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
-    public static int start = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -146,6 +142,7 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
+    // Singleton class initialization ...
     static Login logon;
     public static Login getInstance(){
         if(logon==null){
@@ -156,14 +153,29 @@ public class Login extends javax.swing.JFrame {
     
     private void createSession()
     {
-        Create_Session ccs =new Create_Session();
-        ccs.setVisible(true);
-        //fullpage.getInstance().setVisible(false);
+        Create_Session cs =new Create_Session();
+        if(txt_username.getText().equalsIgnoreCase("yc"))
+        {
+            cs.lbl_user.setText("YC");
+            cs.txt_fullname.setText("Guest");
+            cs.txt_balance.setText("0.00");
+        }
+        //else retrieve from database
+        else
+        {
+            cs.lbl_user.setText(txt_username.getText());
+            cs.txt_fullname.setText("retrieve from DB");
+            cs.txt_address.setText("retrieve from DB");
+            cs.txt_age.setText("retrieve from DB");
+            cs.txt_balance.setText("retrieve from DB");
+        }
+        cs.setVisible(true);        
         this.setVisible(false);
     }
     
+    //Username and Password validity...
     private static boolean isPasswordCorrect(char[] input) {
-        boolean isCorrect = true;
+        boolean isCorrect;
         char[] correctPassword = { 'y', 'c' };
 
         if (input.length != correctPassword.length) {
@@ -192,18 +204,25 @@ public class Login extends javax.swing.JFrame {
         }
     }
     
+    //To clear the login form
+    private void clear()
+    {
+        txt_username.setText(null);
+        txt_password.setText(null);
+    }
     
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         validity();
+        clear();
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
-        txt_username.setText(null);
-        txt_password.setText(null);
+        clear();
     }//GEN-LAST:event_btn_cancelActionPerformed
 
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
         validity();
+        clear();
     }//GEN-LAST:event_txt_passwordActionPerformed
 
     private int check = 0;
@@ -252,16 +271,12 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                    fullpage.getInstance().setVisible(true);
-                    
-                    Login l = Login.getInstance();                    
-                    l.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                    l.setSize(390,330);
-                    l.setVisible(true);
-              }
-        });
+             fullpage.getInstance().setVisible(true);
+             Login l = Login.getInstance();                    
+             l.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+             l.setSize(390,330);
+             l.setVisible(true);
+              
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancel;

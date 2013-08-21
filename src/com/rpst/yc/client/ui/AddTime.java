@@ -32,12 +32,8 @@ public class AddTime extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         spin_addtime = new javax.swing.JSpinner();
         lbl_user = new javax.swing.JLabel();
-        btn_five = new javax.swing.JButton();
         btn_ten = new javax.swing.JButton();
-        btn_fifteen = new javax.swing.JButton();
         btn_twenty = new javax.swing.JButton();
-        btn_twentyfive = new javax.swing.JButton();
-        btn_thirty = new javax.swing.JButton();
         btn_cancel = new javax.swing.JButton();
         btn_sixty = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -46,7 +42,7 @@ public class AddTime extends javax.swing.JFrame {
         lbl_prepaid = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lbl_currBalance = new javax.swing.JLabel();
-        btn_fourty = new javax.swing.JButton();
+        btn_thirty = new javax.swing.JButton();
         btn_ok = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         lbl_time = new javax.swing.JLabel();
@@ -55,34 +51,26 @@ public class AddTime extends javax.swing.JFrame {
         setTitle("Add Time");
         setAlwaysOnTop(true);
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(400, 440));
+        setPreferredSize(new java.awt.Dimension(395, 410));
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jProgressBar1.setStringPainted(true);
-        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 324, 20));
+        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Pre-paid:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 380, 10));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 370, 10));
 
         spin_addtime.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(spin_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 90, -1));
+        spin_addtime.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(5)));
+        getContentPane().add(spin_addtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 90, -1));
 
         lbl_user.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbl_user.setText("User");
         getContentPane().add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        btn_five.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_five.setText("+ 5 mins.");
-        btn_five.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_fiveActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_five, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 90, -1));
 
         btn_ten.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_ten.setText("+ 10 mins.");
@@ -91,16 +79,7 @@ public class AddTime extends javax.swing.JFrame {
                 btn_tenActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_ten, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
-
-        btn_fifteen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_fifteen.setText("+ 15 mins.");
-        btn_fifteen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_fifteenActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_fifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        getContentPane().add(btn_ten, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         btn_twenty.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_twenty.setText("+ 20 mins.");
@@ -109,25 +88,7 @@ public class AddTime extends javax.swing.JFrame {
                 btn_twentyActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_twenty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 90, -1));
-
-        btn_twentyfive.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_twentyfive.setText("+ 25 mins.");
-        btn_twentyfive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_twentyfiveActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_twentyfive, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
-
-        btn_thirty.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_thirty.setText("+ 30 mins.");
-        btn_thirty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_thirtyActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_thirty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
+        getContentPane().add(btn_twenty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
         btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_cancel.setText("Cancel");
@@ -136,7 +97,7 @@ public class AddTime extends javax.swing.JFrame {
                 btn_cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 90, 30));
+        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 90, 30));
 
         btn_sixty.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_sixty.setText("+ 60 mins.");
@@ -145,42 +106,42 @@ public class AddTime extends javax.swing.JFrame {
                 btn_sixtyActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_sixty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 380, 10));
+        getContentPane().add(btn_sixty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 370, 10));
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 40, 250));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 10, 210));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Add Time:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        lbl_prepaid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbl_prepaid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbl_prepaid.setText("Rs. 0.00");
-        getContentPane().add(lbl_prepaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 70, -1));
+        getContentPane().add(lbl_prepaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 70, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Current Balance:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
 
-        lbl_currBalance.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbl_currBalance.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbl_currBalance.setForeground(new java.awt.Color(0, 0, 204));
         lbl_currBalance.setText("Rs. 0.00");
-        getContentPane().add(lbl_currBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 70, -1));
+        getContentPane().add(lbl_currBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 70, -1));
 
-        btn_fourty.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_fourty.setText("+ 40 mins.");
-        btn_fourty.addActionListener(new java.awt.event.ActionListener() {
+        btn_thirty.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_thirty.setText("+ 30 mins.");
+        btn_thirty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_fourtyActionPerformed(evt);
+                btn_thirtyActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_fourty, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        getContentPane().add(btn_thirty, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         btn_ok.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_ok.setText("Ok");
-        getContentPane().add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 90, 30));
-        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, 380, 10));
+        getContentPane().add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 90, 30));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, 370, 10));
 
         lbl_time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lbl_time.setText("Unlimited");
@@ -194,33 +155,17 @@ public class AddTime extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fiveActionPerformed
-       spin_addtime.setValue(5);
-    }//GEN-LAST:event_btn_fiveActionPerformed
-
     private void btn_tenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tenActionPerformed
         spin_addtime.setValue(10);
     }//GEN-LAST:event_btn_tenActionPerformed
-
-    private void btn_fifteenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fifteenActionPerformed
-        spin_addtime.setValue(15);
-    }//GEN-LAST:event_btn_fifteenActionPerformed
 
     private void btn_twentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_twentyActionPerformed
         spin_addtime.setValue(20);
     }//GEN-LAST:event_btn_twentyActionPerformed
 
-    private void btn_twentyfiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_twentyfiveActionPerformed
-        spin_addtime.setValue(25);
-    }//GEN-LAST:event_btn_twentyfiveActionPerformed
-
     private void btn_thirtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thirtyActionPerformed
         spin_addtime.setValue(30);
     }//GEN-LAST:event_btn_thirtyActionPerformed
-
-    private void btn_fourtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fourtyActionPerformed
-        spin_addtime.setValue(40);
-    }//GEN-LAST:event_btn_fourtyActionPerformed
 
     private void btn_sixtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sixtyActionPerformed
         spin_addtime.setValue(60);
@@ -266,15 +211,11 @@ public class AddTime extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancel;
-    private javax.swing.JButton btn_fifteen;
-    private javax.swing.JButton btn_five;
-    private javax.swing.JButton btn_fourty;
     private javax.swing.JButton btn_ok;
     private javax.swing.JButton btn_sixty;
     private javax.swing.JButton btn_ten;
     private javax.swing.JButton btn_thirty;
     private javax.swing.JButton btn_twenty;
-    private javax.swing.JButton btn_twentyfive;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
