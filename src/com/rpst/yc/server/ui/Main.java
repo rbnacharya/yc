@@ -18,6 +18,7 @@ import javax.imageio.*;
 import javax.swing.ImageIcon;
 import java.util.Arrays;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -76,7 +77,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menu_about = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         menu_terminal = new javax.swing.JMenu();
         menu_users = new javax.swing.JMenu();
@@ -84,9 +85,9 @@ public class Main extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenu11 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        menu_user = new javax.swing.JMenu();
+        menu_timecode = new javax.swing.JMenu();
+        menu_logout = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
@@ -147,6 +148,11 @@ public class Main extends javax.swing.JFrame {
 
         btn_about.setBackground(new java.awt.Color(153, 153, 255));
         btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/About.jpg"))); // NOI18N
+        btn_about.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aboutActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_about, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 80, 70));
 
         btn_setup.setBackground(new java.awt.Color(153, 153, 255));
@@ -319,10 +325,15 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1.setAutoscrolls(true);
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jMenu1.setText("About");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu1.setPreferredSize(new java.awt.Dimension(70, 20));
-        jMenuBar1.add(jMenu1);
+        menu_about.setText("About");
+        menu_about.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_about.setPreferredSize(new java.awt.Dimension(70, 20));
+        menu_about.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_aboutMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menu_about);
 
         jMenu2.setText("Setup");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -376,20 +387,35 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Users");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu4.setPreferredSize(new java.awt.Dimension(70, 20));
-        jMenuBar1.add(jMenu4);
+        menu_user.setText("Users");
+        menu_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_user.setPreferredSize(new java.awt.Dimension(70, 20));
+        menu_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_userMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menu_user);
 
-        jMenu5.setText("Timecode");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu5.setPreferredSize(new java.awt.Dimension(90, 20));
-        jMenuBar1.add(jMenu5);
+        menu_timecode.setText("Timecode");
+        menu_timecode.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_timecode.setPreferredSize(new java.awt.Dimension(90, 20));
+        menu_timecode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_timecodeMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menu_timecode);
 
-        jMenu6.setText("Log out");
-        jMenu6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenu6.setPreferredSize(new java.awt.Dimension(70, 20));
-        jMenuBar1.add(jMenu6);
+        menu_logout.setText("Log out");
+        menu_logout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menu_logout.setPreferredSize(new java.awt.Dimension(70, 20));
+        menu_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_logoutMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menu_logout);
 
         setJMenuBar(jMenuBar1);
 
@@ -577,14 +603,50 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_statisticsActionPerformed
 
     private void menu_terminalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_terminalMouseClicked
-        TimeCode tc = new TimeCode();
-        tc.setVisible(true);
+        Terminal t = new Terminal();
+        t.setVisible(true);
     }//GEN-LAST:event_menu_terminalMouseClicked
 
     private void menu_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_usersMouseClicked
         Frm_User usr = new Frm_User();
         usr.setVisible(true);
     }//GEN-LAST:event_menu_usersMouseClicked
+
+    private void btn_aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aboutActionPerformed
+        About a = new About();
+        //a.setLayout(new BorderLayout());
+        JLabel l = new JLabel(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Cyber_Cafe_Icon.jpg")));
+        a.setSize(800, 500);
+        a.add(l);
+        a.setLocation(300, 100);
+        a.setVisible(true);
+    }//GEN-LAST:event_btn_aboutActionPerformed
+
+    private void menu_aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_aboutMouseClicked
+        About a = new About();
+        //a.setLayout(new BorderLayout());
+        JLabel l = new JLabel(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Cyber_Cafe_Icon.jpg")));
+        a.setSize(800, 500);
+        a.add(l);
+        a.setLocation(300, 100);
+        a.setVisible(true);
+    }//GEN-LAST:event_menu_aboutMouseClicked
+
+    private void menu_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_userMouseClicked
+        Frm_User usr = new Frm_User();
+        usr.setVisible(true);
+    }//GEN-LAST:event_menu_userMouseClicked
+
+    private void menu_timecodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_timecodeMouseClicked
+        TimeCode tc = new TimeCode();
+        tc.setVisible(true);
+                
+    }//GEN-LAST:event_menu_timecodeMouseClicked
+
+    private void menu_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_logoutMouseClicked
+        new Login().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menu_logoutMouseClicked
 //cursor setting method
     public static void btn_set_cursor(Main main) {
         main.btn_about.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -652,14 +714,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JPanel jPanel2;
@@ -671,7 +729,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_busy;
     private javax.swing.JLabel lbl_payment;
+    private javax.swing.JMenu menu_about;
+    private javax.swing.JMenu menu_logout;
     private javax.swing.JMenu menu_terminal;
+    private javax.swing.JMenu menu_timecode;
+    private javax.swing.JMenu menu_user;
     private javax.swing.JMenu menu_users;
     protected javax.swing.JPanel panel_bgterminal;
     // End of variables declaration//GEN-END:variables
