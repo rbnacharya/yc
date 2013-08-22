@@ -5,6 +5,8 @@ import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.io.File;
@@ -15,6 +17,7 @@ import javax.swing.JFrame;
 import javax.imageio.*;
 import javax.swing.ImageIcon;
 import java.util.Arrays;
+import javax.swing.JButton;
 
 /*
  * To change this template, choose Tools | Templates
@@ -279,13 +282,12 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(btn_communicate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, -1));
 
         panel_bgterminal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panel_bgterminal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_busy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbl_busy.setText("                Click on the busy terminal ...");
-        panel_bgterminal.add(lbl_busy, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, -1));
+        lbl_busy.setText("        Click on the busy terminal ...");
+        panel_bgterminal.add(lbl_busy);
 
-        getContentPane().add(panel_bgterminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, 230));
+        getContentPane().add(panel_bgterminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 270, 230));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 270, 10));
 
         lbl_payment.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -406,6 +408,55 @@ public class Main extends javax.swing.JFrame {
     int[] comp = new int[50];
     //comp[1] = 1;
     
+    public void start(final JButton btn)
+    {
+        btn_start.setEnabled(true);
+        btn_stop.setEnabled(false);
+        btn_addtime.setEnabled(false);
+        btn_communicate.setEnabled(false);
+        
+        btn_start.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                    Create_Session cs = new Create_Session();
+                    cs.setVisible(true);
+                    cs.getAction(btn, cs);
+                    btn_start.setEnabled(false);
+                }
+            });
+            
+         
+    }
+    public void stop(JButton btn)
+    {
+        btn_start.setEnabled(false);
+        btn_stop.setEnabled(true);
+        btn_addtime.setEnabled(true);
+        btn_communicate.setEnabled(true);
+    }
+    public void action(final JButton btn, int i)
+    {
+        if(i==0){
+        btn.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                    start(btn);
+                    
+                }
+            });
+            i=1;
+         }
+        else
+        {
+            btn.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    JPanel_BusyTerminal t = Create_Session.getTerminal()[1];
+                    panel_bgterminal.removeAll();
+                    panel_bgterminal.add(t);
+                    panel_bgterminal.validate();
+                    stop(btn);
+                }
+            });
+        }
+    }
    
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
         Frm_User usr = new Frm_User();
@@ -438,20 +489,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_comp2ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
-        Create_Session cs = new Create_Session();
-        cs.setVisible(true);
-        
-        JPanel_BusyTerminal bt = new JPanel_BusyTerminal();
-        panel_bgterminal.removeAll();
-        panel_bgterminal.setLayout(new BorderLayout());
-        panel_bgterminal.add(bt);
-        panel_bgterminal.validate();
-        
-        btn_addtime.setEnabled(true);
-        btn_stop.setEnabled(true);
-        btn_communicate.setEnabled(true);
-        btn_start.setEnabled(false);
-        btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png")));
+//        Create_Session cs = new Create_Session();
+//        cs.setVisible(true);
+//        
+//        JPanel_BusyTerminal bt = new JPanel_BusyTerminal();
+//        panel_bgterminal.removeAll();
+//        panel_bgterminal.setLayout(new BorderLayout());
+//        panel_bgterminal.add(bt);
+//        panel_bgterminal.validate();
+//        
+//        btn_addtime.setEnabled(true);
+//        btn_stop.setEnabled(true);
+//        btn_communicate.setEnabled(true);
+//        btn_start.setEnabled(false);
+//        btn_comp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png")));
     }//GEN-LAST:event_btn_startActionPerformed
 
     private void btn_stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stopActionPerformed

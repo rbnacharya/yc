@@ -8,6 +8,8 @@ import java.awt.Color;
 import static java.awt.Component.CENTER_ALIGNMENT;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicOptionPaneUI;
@@ -151,7 +153,7 @@ public class Terminal extends javax.swing.JFrame {
         btn.setMaximumSize(new java.awt.Dimension(95, 75));
         btn.setMinimumSize(new java.awt.Dimension(95, 75));
         btn.setPreferredSize(new java.awt.Dimension(95, 75));
-        
+        m.action(btn, 0);
         if(terminals <36)
         {
             m.jPanel2.setLayout(new FlowLayout((int) CENTER_ALIGNMENT, 10, 10));
@@ -166,6 +168,7 @@ public class Terminal extends javax.swing.JFrame {
     }
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         addTerminal(Main.getInstance());
+        
         //this.setVisible(false);
     }//GEN-LAST:event_btn_addActionPerformed
 

@@ -4,6 +4,12 @@
  */
 package com.rpst.yc.server.ui;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Pavan Poudel
@@ -138,11 +144,6 @@ public class Create_Session extends javax.swing.JFrame {
 
         btn_create.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_create.setText("Create");
-        btn_create.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_createActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
         txt_age.setEditable(false);
@@ -223,24 +224,33 @@ public class Create_Session extends javax.swing.JFrame {
         }
         return traffic;
     } 
-    private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
-        bg[terminal] = new JPanel_BusyTerminal();
-        bg[terminal].lbl_prepaid_amt.setText(txt_currBalance.getText());
-        bg[terminal].lbl_time_amt.setText("10 (Min.)");
-        bg[terminal].lbl_traffic_amt.setText(setTrafficCost());
-        bg[terminal].lbl_others_amt.setText("0");
-        bg[terminal].lbl_total_amt.setText("10");
-        bg[terminal].lbl_balance.setText("-10");
-        bg[terminal].lbl_time.setText(cbo_time.getSelectedItem().toString());
-        bg[terminal].jProgressBar1.setMaximum(900);
-        bg[terminal].jProgressBar1.setValue(100);
-        Main.getInstance().panel_bgterminal.removeAll();
-        Main.getInstance().panel_bgterminal.add(bg[terminal]);
-        Main.getInstance().panel_bgterminal.validate();
-        this.setVisible(false);
-        terminal++;
-    }//GEN-LAST:event_btn_createActionPerformed
-
+    
+    public void getAction(final JButton b, final Create_Session cs)
+    {
+        btn_create.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                bg[terminal] = new JPanel_BusyTerminal();
+                bg[terminal].lbl_prepaid_amt.setText(txt_currBalance.getText());
+                bg[terminal].lbl_time_amt.setText("10 (Min.)");
+                bg[terminal].lbl_traffic_amt.setText(setTrafficCost());
+                bg[terminal].lbl_others_amt.setText("0");
+                bg[terminal].lbl_total_amt.setText("10");
+                bg[terminal].lbl_balance.setText("-10");
+                bg[terminal].lbl_time.setText(cbo_time.getSelectedItem().toString());
+                bg[terminal].jProgressBar1.setMaximum(900);
+                bg[terminal].jProgressBar1.setValue(100);
+                Main.getInstance().panel_bgterminal.removeAll();
+                Main.getInstance().panel_bgterminal.add(bg[terminal]);
+                Main.getInstance().panel_bgterminal.validate();
+                terminal++;
+                
+                b.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/desktopon.png")));
+                b.setSelected(true);
+                cs.setVisible(false);
+                }
+            });
+        
+    }
     /**
      * @param args the command line arguments
      */
