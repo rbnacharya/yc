@@ -4,6 +4,13 @@
  */
 package com.rpst.yc.server.ui;
 
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Pavan Poudel
@@ -28,7 +35,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        panel_access = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -40,16 +47,16 @@ public class UserRegistration extends javax.swing.JFrame {
         txt_fullname = new javax.swing.JTextField();
         txt_balance = new javax.swing.JTextField();
         cbo_payment = new javax.swing.JComboBox();
-        txt_password = new javax.swing.JPasswordField();
-        txt_confirmation = new javax.swing.JPasswordField();
+        txt_idnumber = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
         btn_image = new javax.swing.JButton();
         cbo_usertype = new javax.swing.JComboBox();
-        btn_cancel = new javax.swing.JButton();
         btn_ok = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
+        cbo_identity = new javax.swing.JComboBox();
+        txt_imagepath = new javax.swing.JTextField();
+        lbl_photo = new javax.swing.JLabel();
+        panel_personal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,10 +74,9 @@ public class UserRegistration extends javax.swing.JFrame {
         txt_description = new javax.swing.JTextPane();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_save = new javax.swing.JButton();
 
         setTitle("User Registration");
-        setAlwaysOnTop(true);
         setLocationByPlatform(true);
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
@@ -78,35 +84,35 @@ public class UserRegistration extends javax.swing.JFrame {
 
         jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_access.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Balance");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        panel_access.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Login ID");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        panel_access.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("Password");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jLabel9.setText("Identity");
+        panel_access.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Full Name");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        panel_access.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("User Type");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+        panel_access.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Confirmation");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jLabel12.setText("ID Number");
+        panel_access.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Payment");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        panel_access.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         txt_loginId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txt_loginId.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +120,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 txt_loginIdActionPerformed(evt);
             }
         });
-        jPanel2.add(txt_loginId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 220, 30));
+        panel_access.add(txt_loginId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 220, 30));
 
         txt_fullname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txt_fullname.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +128,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 txt_fullnameActionPerformed(evt);
             }
         });
-        jPanel2.add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 290, 30));
+        panel_access.add(txt_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 290, 30));
 
         txt_balance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txt_balance.addActionListener(new java.awt.event.ActionListener() {
@@ -130,70 +136,84 @@ public class UserRegistration extends javax.swing.JFrame {
                 txt_balanceActionPerformed(evt);
             }
         });
-        jPanel2.add(txt_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 290, 30));
+        panel_access.add(txt_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 290, 30));
 
         cbo_payment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbo_payment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pre-paid", "Post-paid" }));
-        jPanel2.add(cbo_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 290, 30));
+        panel_access.add(cbo_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 290, 30));
 
-        txt_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 220, 30));
-
-        txt_confirmation.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(txt_confirmation, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 220, 30));
+        txt_idnumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        panel_access.add(txt_idnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 220, 30));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 10, 150));
-
-        jButton3.setText("Photo");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 120, 120));
+        panel_access.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 10, 150));
 
         btn_image.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_image.setText("Image ...");
-        jPanel2.add(btn_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 100, -1));
+        btn_image.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_imageActionPerformed(evt);
+            }
+        });
+        panel_access.add(btn_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 100, -1));
 
         cbo_usertype.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbo_usertype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Other", "Employee", "Student" }));
-        jPanel2.add(cbo_usertype, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 290, 30));
-
-        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_cancel.setText("Cancel");
-        jPanel2.add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, 90, 30));
+        panel_access.add(cbo_usertype, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 290, 30));
 
         btn_ok.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_ok.setText("Ok");
-        jPanel2.add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 90, 30));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 480, -1));
+        btn_ok.setText("Ok >>");
+        btn_ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_okActionPerformed(evt);
+            }
+        });
+        panel_access.add(btn_ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 90, 30));
+        panel_access.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 480, -1));
 
-        jTabbedPane2.addTab("Access", jPanel2);
+        cbo_identity.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cbo_identity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID card", "Lisence", "Citizenship", "Other" }));
+        panel_access.add(cbo_identity, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 220, 30));
 
-        jPanel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        txt_imagepath.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txt_imagepath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_imagepathActionPerformed(evt);
+            }
+        });
+        panel_access.add(txt_imagepath, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 360, 30));
+
+        lbl_photo.setText("                Photo");
+        panel_access.add(lbl_photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 34, 130, 120));
+
+        jTabbedPane2.addTab("Access", panel_access);
+
+        panel_personal.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        panel_personal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Description");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+        panel_personal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Gender");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        panel_personal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Age");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        panel_personal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Phone");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        panel_personal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        panel_personal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Address");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+        panel_personal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         rdo_male.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdo_male.setText("Male");
@@ -202,7 +222,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 rdo_maleActionPerformed(evt);
             }
         });
-        jPanel1.add(rdo_male, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+        panel_personal.add(rdo_male, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         rdo_female.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rdo_female.setText("Female");
@@ -211,7 +231,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 rdo_femaleActionPerformed(evt);
             }
         });
-        jPanel1.add(rdo_female, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        panel_personal.add(rdo_female, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
         txt_age.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txt_age.addActionListener(new java.awt.event.ActionListener() {
@@ -219,34 +239,39 @@ public class UserRegistration extends javax.swing.JFrame {
                 txt_ageActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 93, 260, 30));
+        panel_personal.add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 93, 260, 30));
 
         txt_phone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 143, 260, 30));
+        panel_personal.add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 143, 260, 30));
 
         txt_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 193, 260, 30));
+        panel_personal.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 193, 260, 30));
 
         txt_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jScrollPane1.setViewportView(txt_address);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 350, 70));
+        panel_personal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 350, 70));
 
         txt_description.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jScrollPane2.setViewportView(txt_description);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 350, 90));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 480, -1));
+        panel_personal.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 350, 90));
+        panel_personal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 480, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Cancel");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, 90, 30));
+        panel_personal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, 90, 30));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Ok");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 90, 30));
+        btn_save.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_save.setText("save");
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saveActionPerformed(evt);
+            }
+        });
+        panel_personal.add(btn_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 90, 30));
 
-        jTabbedPane2.addTab("Personal", jPanel1);
+        jTabbedPane2.addTab("Personal", panel_personal);
 
         getContentPane().add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 570));
 
@@ -279,6 +304,44 @@ public class UserRegistration extends javax.swing.JFrame {
         rdo_male.setSelected(true);
         rdo_female.setSelected(false);
     }//GEN-LAST:event_rdo_maleActionPerformed
+
+    private void txt_imagepathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_imagepathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_imagepathActionPerformed
+
+    public String Chooser() {
+        JFileChooser chooser = new JFileChooser();
+        String fileName;
+        int r = chooser.showOpenDialog(new JFrame());
+        if (r == JFileChooser.APPROVE_OPTION) {
+            fileName = chooser.getSelectedFile().getPath();
+            return fileName;
+        }
+        else 
+        {
+            return null;
+        }
+        
+    }
+    private void btn_imageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imageActionPerformed
+        String path = Chooser();
+        txt_imagepath.setText(path);
+        ImageIcon ic = new javax.swing.ImageIcon((txt_imagepath.getText()));
+        //lbl_photo.s
+        lbl_photo.setIcon(new javax.swing.ImageIcon((txt_imagepath.getText())));
+        
+        lbl_photo.setVisible(true);
+//        JDialog dg = new JDialog();
+//        dg.setVisible(true);
+    }//GEN-LAST:event_btn_imageActionPerformed
+
+    private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
+       jTabbedPane2.setSelectedIndex(jTabbedPane2.getSelectedIndex() + 1);
+    }//GEN-LAST:event_btn_okActionPerformed
+
+    private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_saveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,15 +378,14 @@ public class UserRegistration extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cancel;
     private javax.swing.JButton btn_image;
     private javax.swing.JButton btn_ok;
+    private javax.swing.JButton btn_save;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cbo_identity;
     private javax.swing.JComboBox cbo_payment;
     private javax.swing.JComboBox cbo_usertype;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -337,25 +399,26 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JLabel lbl_photo;
+    private javax.swing.JPanel panel_access;
+    private javax.swing.JPanel panel_personal;
     private javax.swing.JRadioButton rdo_female;
     private javax.swing.JRadioButton rdo_male;
     private javax.swing.JTextPane txt_address;
     private javax.swing.JTextField txt_age;
     private javax.swing.JTextField txt_balance;
-    private javax.swing.JPasswordField txt_confirmation;
     private javax.swing.JTextPane txt_description;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_fullname;
+    private javax.swing.JPasswordField txt_idnumber;
+    private javax.swing.JTextField txt_imagepath;
     private javax.swing.JTextField txt_loginId;
-    private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_phone;
     // End of variables declaration//GEN-END:variables
 }

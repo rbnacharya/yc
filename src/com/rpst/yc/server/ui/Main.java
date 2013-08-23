@@ -3,6 +3,7 @@ package com.rpst.yc.server.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,7 @@ import javax.swing.ImageIcon;
 import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /*
  * To change this template, choose Tools | Templates
@@ -485,7 +487,7 @@ public class Main extends javax.swing.JFrame {
     }
    
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
-        Frm_User usr = new Frm_User();
+        Frm_UserDetails usr = new Frm_UserDetails();
         usr.setVisible(true);
     }//GEN-LAST:event_btn_usersActionPerformed
 
@@ -570,8 +572,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_comp1ActionPerformed
 
     private void btn_communicateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_communicateActionPerformed
-        Details dt = new Details();
-        dt.setVisible(true);
+        Frm_Communication dt = new Frm_Communication();
+        //dt.setVisible(true);
     }//GEN-LAST:event_btn_communicateActionPerformed
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
@@ -608,7 +610,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_terminalMouseClicked
 
     private void menu_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_usersMouseClicked
-        Frm_User usr = new Frm_User();
+        Frm_UserDetails usr = new Frm_UserDetails();
         usr.setVisible(true);
     }//GEN-LAST:event_menu_usersMouseClicked
 
@@ -633,7 +635,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_aboutMouseClicked
 
     private void menu_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_userMouseClicked
-        Frm_User usr = new Frm_User();
+        Frm_UserDetails usr = new Frm_UserDetails();
         usr.setVisible(true);
     }//GEN-LAST:event_menu_userMouseClicked
 

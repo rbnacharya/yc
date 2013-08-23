@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicOptionPaneUI;
 import javax.swing.plaf.basic.DefaultMenuLayout;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
+import com.rpst.yc.database.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -123,6 +125,11 @@ public class Terminal extends javax.swing.JFrame {
 
         btn_receive.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_receive.setText("Receive");
+        btn_receive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_receiveActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_receive, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 80, 30));
 
         btn_add.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -138,6 +145,20 @@ public class Terminal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    static int i=10;
+    DBQuery dq =new DBQuery();
+    TerminalData td; 
+    
+    private void input()
+    {
+        td = new TerminalData(txt_terminal.getText(), txt_computername.getText(), cbo_profile.getSelectedItem().toString(), txt_ipaddress.getText(), txt_username.getText(), txt_macaddress.getText());
+//        td.setTid(txt_terminal.getText());
+//        td.setComp_name(txt_computername.getText());
+//        td.setProfile(cbo_profile.getSelectedItem().toString());
+//        td.setIpaddr(txt_ipaddress.getText());
+//        td.setUsername(txt_username.getText());
+//        td.setMacaddr(txt_macaddress.getText());
+    }
     static int terminals = 2;
     private void addTerminal(Main m)
     {
@@ -149,6 +170,7 @@ public class Terminal extends javax.swing.JFrame {
         btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn.setVerticalTextPosition(javax.swing.SwingConstants.CENTER);
         btn.setLabel(txt_terminal.getText());
+        btn.setToolTipText(txt_computername.getText());
         btn.setMargin(new java.awt.Insets(0, 0, 0, 0));
         btn.setMaximumSize(new java.awt.Dimension(95, 75));
         btn.setMinimumSize(new java.awt.Dimension(95, 75));
@@ -168,13 +190,21 @@ public class Terminal extends javax.swing.JFrame {
     }
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         addTerminal(Main.getInstance());
-        
-        //this.setVisible(false);
+        input();
+        String msg = dq.Saveterminal(td);
+        JOptionPane.showMessageDialog(rootPane, msg);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btn_cancelActionPerformed
+
+    private void btn_receiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_receiveActionPerformed
+        // receive the MAC Address of terminal with specified IP address
+        txt_macaddress.setText("00:A0:C9:14:C8:" +i);
+        i++;
+    }//GEN-LAST:event_btn_receiveActionPerformed
 
     /**
      * @param args the command line arguments

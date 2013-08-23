@@ -8,12 +8,12 @@ package com.rpst.yc.server.ui;
  *
  * @author Pavan Poudel
  */
-public class Frm_User extends javax.swing.JFrame {
+public class Frm_UserDetails extends javax.swing.JFrame {
 
     /**
-     * Creates new form Frm_User
+     * Creates new form Frm_UserDetails
      */
-    public Frm_User() {
+    public Frm_UserDetails() {
         initComponents();
     }
 
@@ -32,6 +32,8 @@ public class Frm_User extends javax.swing.JFrame {
         tblUserList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery.getResultList();
         tblUserQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT t FROM TblUser t");
         tblUserList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery1.getResultList();
+        tblUserQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT t FROM TblUser t");
+        tblUserList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery2.getResultList();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -52,18 +54,19 @@ public class Frm_User extends javax.swing.JFrame {
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTable1.setCellSelectionEnabled(true);
         jTable1.setRowHeight(20);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblUserList1, jTable1);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblUserList2, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${loginID}"));
-        columnBinding.setColumnName("Login ID");
+        columnBinding.setColumnName("Login Id");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fullName}"));
         columnBinding.setColumnName("Full Name");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${userType}"));
-        columnBinding.setColumnName("User Type");
+        columnBinding.setColumnName("UserType");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${payment}"));
         columnBinding.setColumnName("Payment");
@@ -71,9 +74,6 @@ public class Frm_User extends javax.swing.JFrame {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${balance}"));
         columnBinding.setColumnName("Balance");
         columnBinding.setColumnClass(Float.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${image}"));
-        columnBinding.setColumnName("Image");
-        columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${gender}"));
         columnBinding.setColumnName("Gender");
         columnBinding.setColumnClass(String.class);
@@ -89,18 +89,10 @@ public class Frm_User extends javax.swing.JFrame {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${address}"));
         columnBinding.setColumnName("Address");
         columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${description}"));
-        columnBinding.setColumnName("Description");
-        columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        jTable1.getColumnModel().getColumn(0).setHeaderValue("Login Id");
-        jTable1.getColumnModel().getColumn(1).setHeaderValue("Full Name");
-        jTable1.getColumnModel().getColumn(2).setHeaderValue("Age");
-        jTable1.getColumnModel().getColumn(3).setHeaderValue("Address");
-        jTable1.getColumnModel().getColumn(4).setHeaderValue("---");
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 230));
 
@@ -169,20 +161,20 @@ public class Frm_User extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_UserDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_UserDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_UserDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frm_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_UserDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frm_User().setVisible(true);
+                new Frm_UserDetails().setVisible(true);
             }
         });
     }
@@ -196,10 +188,12 @@ public class Frm_User extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private java.util.List<com.rpst.yc.server.ui.TblUser> tblUserList;
-    private java.util.List<com.rpst.yc.server.ui.TblUser> tblUserList1;
+    private java.util.List<com.rpst.yc.database.TblUser> tblUserList;
+    private java.util.List<com.rpst.yc.database.TblUser> tblUserList1;
+    private java.util.List<com.rpst.yc.database.TblUser> tblUserList2;
     private javax.persistence.Query tblUserQuery;
     private javax.persistence.Query tblUserQuery1;
+    private javax.persistence.Query tblUserQuery2;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

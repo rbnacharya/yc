@@ -40,6 +40,7 @@ public class fullpage extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(0, 51, 255));
+        setEnabled(false);
         setForeground(java.awt.Color.blue);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setModalExclusionType(null);

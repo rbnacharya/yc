@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rpst.yc.server.ui;
+package com.rpst.yc.database;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
