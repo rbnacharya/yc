@@ -4,12 +4,15 @@
  */
 package com.rpst.yc.server.ui;
 
+import com.rpst.yc.database.DBQuery;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import com.rpst.yc.database.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +27,9 @@ public class UserRegistration extends javax.swing.JFrame {
         initComponents();
     }
 
+    DBQuery dq = new DBQuery();
+    UserData ud;
+    static String gender;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +53,6 @@ public class UserRegistration extends javax.swing.JFrame {
         txt_fullname = new javax.swing.JTextField();
         txt_balance = new javax.swing.JTextField();
         cbo_payment = new javax.swing.JComboBox();
-        txt_idnumber = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         btn_image = new javax.swing.JButton();
         cbo_usertype = new javax.swing.JComboBox();
@@ -56,6 +61,7 @@ public class UserRegistration extends javax.swing.JFrame {
         cbo_identity = new javax.swing.JComboBox();
         txt_imagepath = new javax.swing.JTextField();
         lbl_photo = new javax.swing.JLabel();
+        txt_idnumber = new javax.swing.JTextField();
         panel_personal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -142,9 +148,6 @@ public class UserRegistration extends javax.swing.JFrame {
         cbo_payment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pre-paid", "Post-paid" }));
         panel_access.add(cbo_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 290, 30));
 
-        txt_idnumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        panel_access.add(txt_idnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 220, 30));
-
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         panel_access.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 10, 150));
 
@@ -185,6 +188,14 @@ public class UserRegistration extends javax.swing.JFrame {
 
         lbl_photo.setText("                Photo");
         panel_access.add(lbl_photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 34, 130, 120));
+
+        txt_idnumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txt_idnumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_idnumberActionPerformed(evt);
+            }
+        });
+        panel_access.add(txt_idnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 220, 30));
 
         jTabbedPane2.addTab("Access", panel_access);
 
@@ -279,9 +290,14 @@ public class UserRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void input()
+    {
+        ud = new UserData(txt_loginId.getText(), "yc", cbo_identity.getSelectedItem().toString(), txt_idnumber.getText(), txt_fullname.getText(), cbo_usertype.getSelectedItem().toString(), cbo_payment.getSelectedItem().toString(), Float.parseFloat(txt_balance.getText()), gender, Integer.parseInt(txt_age.getText()), txt_phone.getText(), txt_email.getText(), txt_address.getText(), txt_description.getText(), txt_imagepath.getText());
+    }
     private void rdo_femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdo_femaleActionPerformed
         rdo_female.setSelected(true);
         rdo_male.setSelected(false);
+        gender = "Female";
     }//GEN-LAST:event_rdo_femaleActionPerformed
 
     private void txt_ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ageActionPerformed
@@ -303,6 +319,7 @@ public class UserRegistration extends javax.swing.JFrame {
     private void rdo_maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdo_maleActionPerformed
         rdo_male.setSelected(true);
         rdo_female.setSelected(false);
+        gender = "Male";
     }//GEN-LAST:event_rdo_maleActionPerformed
 
     private void txt_imagepathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_imagepathActionPerformed
@@ -340,8 +357,15 @@ public class UserRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_okActionPerformed
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
-        // TODO add your handling code here:
+        input();
+        String msg = dq.SaveUser(ud);
+        JOptionPane.showMessageDialog(rootPane, msg);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_saveActionPerformed
+
+    private void txt_idnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idnumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_idnumberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,7 +440,7 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JTextPane txt_description;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_fullname;
-    private javax.swing.JPasswordField txt_idnumber;
+    private javax.swing.JTextField txt_idnumber;
     private javax.swing.JTextField txt_imagepath;
     private javax.swing.JTextField txt_loginId;
     private javax.swing.JTextField txt_phone;

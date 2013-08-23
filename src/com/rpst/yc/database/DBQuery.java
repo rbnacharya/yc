@@ -17,7 +17,6 @@ public class DBQuery {
    public String Saveterminal(TerminalData td) {  
         try {  
             Connection connection = DBConnect.connectorDB();
-            Statement statement = connection.createStatement();
             String sql = "INSERT into tbl_terminal(Terminal, Comp_name, Profile, IPAddress, Username, MACAddress) VALUES(?,?,?,?,?,?)"; 
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, td.tid);
@@ -41,7 +40,6 @@ public class DBQuery {
    public String SaveUser(UserData ud) {  
         try {  
             Connection connection = DBConnect.connectorDB();
-            Statement statement = connection.createStatement();
             String sql = "INSERT into tbl_user(LoginID, Password, Identity, IDNumber, FullName, UserType, Payment, Balance, Image, Gender, Age, Phone, Email, Address, Description ) VALUES(?,?,?,?,?,?,?, ?, ?, ?,?,?,?,?,?)"; 
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, ud.LoginId);
@@ -67,6 +65,29 @@ public class DBQuery {
             ps.close();
             connection.close();
             return "User Saved.";
+        } 
+        catch (Exception e) {  
+            e.printStackTrace(); 
+            return "error";
+        }  
+    }
+   
+   public String SaveSession(SessionData sd) {  
+        try {  
+            Connection connection = DBConnect.connectorDB();
+            String sql = "INSERT into tbl_session(UUID, User, StartTime, EndTime, Terminal, TotalCost ) VALUES(?, ?, ?, ?, ?, ?)"; 
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, sd.UUID);
+            ps.setString(2, sd.User);
+            ps.setString(3, sd.StartTime);
+            ps.setString(4, sd.EndTime);
+            ps.setString(5, sd.Terminal);
+            ps.setFloat(6, sd.TotalCost);
+            ps.addBatch();
+            ps.executeBatch();
+            ps.close();
+            connection.close();
+            return "Session Saved.";
         } 
         catch (Exception e) {  
             e.printStackTrace(); 

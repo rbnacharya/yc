@@ -4,11 +4,17 @@
  */
 package com.rpst.yc.server.ui;
 
+import com.rpst.yc.database.DBQuery;
+import com.rpst.yc.database.*;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,7 +48,6 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        cbo_client_terminal = new javax.swing.JComboBox();
         cbo_bandwidth = new javax.swing.JComboBox();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -58,6 +63,7 @@ public class Create_Session extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txt_currBalance = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
+        txt_terminal = new javax.swing.JTextField();
 
         setTitle("Create Sesion");
         setAlwaysOnTop(true);
@@ -121,10 +127,6 @@ public class Create_Session extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 540, 10));
 
-        cbo_client_terminal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbo_client_terminal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PC1", "PC2", "PC3", "PC4" }));
-        getContentPane().add(cbo_client_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 230, 30));
-
         cbo_bandwidth.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbo_bandwidth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "128 Kbps", "256 Kbps", "512 Kbps", "1 Mbps", " " }));
         getContentPane().add(cbo_bandwidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 230, 30));
@@ -144,6 +146,11 @@ public class Create_Session extends javax.swing.JFrame {
 
         btn_create.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_create.setText("Create");
+        btn_create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
         txt_age.setEditable(false);
@@ -184,15 +191,36 @@ public class Create_Session extends javax.swing.JFrame {
         getContentPane().add(txt_currBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 230, 30));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 540, 10));
 
+        txt_terminal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(txt_terminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 230, 30));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     static int terminal=1;
-   
+    static int i=1;
+    DBQuery dq =new DBQuery();
+    SessionData sd;
     public static JPanel_BusyTerminal[] bg = new JPanel_BusyTerminal[50];
     public static JPanel_BusyTerminal[] getTerminal()
     {
         return bg;
+    }
+    
+    private void input()
+    {
+        String uuid = getUUID();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date startTime = new Date();
+        String st = dateFormat.format(startTime);
+        sd = new SessionData(uuid, lbl_user.getText(), st, "", txt_terminal.getText(), 0);
+    }
+    
+    private String getUUID()
+    {
+        String uid = "UUID_" + i;//function call for uuid
+        i++;
+        return uid;
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setVisible(false);
@@ -202,6 +230,13 @@ public class Create_Session extends javax.swing.JFrame {
         UserRegistration usr = new UserRegistration();
         usr.setVisible(true);
     }//GEN-LAST:event_btn_addnewActionPerformed
+
+    private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
+        input();
+        String msg = dq.SaveSession(sd);
+        JOptionPane.showMessageDialog(rootPane, msg);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_createActionPerformed
     
     private String setTrafficCost()
     {
@@ -289,7 +324,6 @@ public class Create_Session extends javax.swing.JFrame {
     private javax.swing.JButton btn_addnew;
     private javax.swing.JButton btn_create;
     private javax.swing.JComboBox cbo_bandwidth;
-    private javax.swing.JComboBox cbo_client_terminal;
     private javax.swing.JComboBox cbo_pricing;
     private javax.swing.JComboBox cbo_time;
     private javax.swing.JComboBox cbo_users;
@@ -312,5 +346,6 @@ public class Create_Session extends javax.swing.JFrame {
     private javax.swing.JTextField txt_age;
     private javax.swing.JTextField txt_currBalance;
     private javax.swing.JTextField txt_fullname;
+    private javax.swing.JTextField txt_terminal;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,9 +34,11 @@ public class Frm_UserDetails extends javax.swing.JFrame {
         tblUserList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery1.getResultList();
         tblUserQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT t FROM TblUser t");
         tblUserList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery2.getResultList();
+        tblUserQuery3 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT t FROM TblUser t");
+        tblUserList3 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblUserQuery3.getResultList();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_user = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         btn_close = new javax.swing.JButton();
         btn_addNew = new javax.swing.JButton();
@@ -51,22 +53,21 @@ public class Frm_UserDetails extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTable1.setRowHeight(20);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
+        tbl_user.setAutoCreateRowSorter(true);
+        tbl_user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tbl_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tbl_user.setRowHeight(20);
+        tbl_user.getTableHeader().setReorderingAllowed(false);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblUserList2, jTable1);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblUserList3, tbl_user, "");
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${loginID}"));
-        columnBinding.setColumnName("Login Id");
+        columnBinding.setColumnName("Login ID");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fullName}"));
         columnBinding.setColumnName("Full Name");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${userType}"));
-        columnBinding.setColumnName("UserType");
+        columnBinding.setColumnName("User Type");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${payment}"));
         columnBinding.setColumnName("Payment");
@@ -91,8 +92,13 @@ public class Frm_UserDetails extends javax.swing.JFrame {
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        tbl_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_userMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbl_user);
+        tbl_user.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 230));
 
@@ -122,11 +128,13 @@ public class Frm_UserDetails extends javax.swing.JFrame {
         btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_edit.setForeground(new java.awt.Color(0, 0, 51));
         btn_edit.setText("Edit ...");
+        btn_edit.setEnabled(false);
         getContentPane().add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 100, 30));
 
         btn_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_delete.setForeground(new java.awt.Color(51, 0, 0));
         btn_delete.setText("Delete ...");
+        btn_delete.setEnabled(false);
         getContentPane().add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 100, 30));
 
         bindingGroup.bind();
@@ -143,6 +151,21 @@ public class Frm_UserDetails extends javax.swing.JFrame {
     private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btn_closeActionPerformed
+
+    private void tbl_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_userMouseClicked
+        //tbl_user.getSelectedRow();
+        int i = tbl_user.getSelectedRowCount();
+        if(i==1)
+        {
+            btn_edit.setEnabled(true);
+            btn_delete.setEnabled(true);
+        }
+       else
+        {
+            btn_edit.setEnabled(false);
+            btn_delete.setEnabled(false);
+        }
+    }//GEN-LAST:event_tbl_userMouseClicked
 
     /**
      * @param args the command line arguments
@@ -187,13 +210,15 @@ public class Frm_UserDetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private java.util.List<com.rpst.yc.database.TblUser> tblUserList;
     private java.util.List<com.rpst.yc.database.TblUser> tblUserList1;
     private java.util.List<com.rpst.yc.database.TblUser> tblUserList2;
+    private java.util.List<com.rpst.yc.database.TblUser> tblUserList3;
     private javax.persistence.Query tblUserQuery;
     private javax.persistence.Query tblUserQuery1;
     private javax.persistence.Query tblUserQuery2;
+    private javax.persistence.Query tblUserQuery3;
+    private javax.swing.JTable tbl_user;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

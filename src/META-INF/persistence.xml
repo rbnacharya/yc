@@ -14,6 +14,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.rpst.yc.server.ui.TblUser</class>
     <class>com.rpst.yc.server.ui.TblTerminal</class>
+    <class>com.rpst.yc.database.TblUser</class>
+    <class>com.rpst.yc.database.TblTerminal</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/yellocafe?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>
