@@ -42,7 +42,7 @@ public static int start = 0;
         btn_cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Server Login");
         setAlwaysOnTop(true);
         setExtendedState(2);
         setLocationByPlatform(true);

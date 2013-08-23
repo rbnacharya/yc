@@ -623,7 +623,6 @@
           <Image iconType="3" name="/com/rpst/yc/images/Add-icon.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Communicate"/>
-        <Property name="enabled" type="boolean" value="false"/>
         <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
           <Insets value="[2, 2, 2, 10]"/>
         </Property>

@@ -47,7 +47,7 @@ public class Login extends javax.swing.JFrame {
         btn_connect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Client Login");
         setAlwaysOnTop(true);
         setExtendedState(2);
         setLocationByPlatform(true);

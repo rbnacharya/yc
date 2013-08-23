@@ -280,7 +280,6 @@ public class Main extends javax.swing.JFrame {
         btn_communicate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_communicate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rpst/yc/images/Add-icon.png"))); // NOI18N
         btn_communicate.setText("Communicate");
-        btn_communicate.setEnabled(false);
         btn_communicate.setMargin(new java.awt.Insets(2, 2, 2, 10));
         btn_communicate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -572,8 +571,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_comp1ActionPerformed
 
     private void btn_communicateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_communicateActionPerformed
-        Frm_Communication dt = new Frm_Communication();
-        //dt.setVisible(true);
+        FrmCommunication dialog = new FrmCommunication(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
     }//GEN-LAST:event_btn_communicateActionPerformed
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
